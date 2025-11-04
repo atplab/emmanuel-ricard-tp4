@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cssbf7mw2w2k4"]
+[gd_scene load_steps=3 format=3 uid="uid://cssbf7mw2w2k4"]
 
 [ext_resource type="Script" uid="uid://cd4m0axn4tkus" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="Script" uid="uid://p10bt4hhf0s2" path="res://coin.gd" id="2_64ctp"]
 
 [node name="HUD" type="Node2D"]
 script = ExtResource("1_37p78")
@@ -23,6 +24,9 @@ flèche droite : avancer
 flèche gauche : reculer
 Espace : saut
 Cliquez ici pour fermer ce menu"
+
+[node name="coin" type="Node" parent="."]
+script = ExtResource("2_64ctp")
 
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="controles" to="." method="_on_controles_pressed"]

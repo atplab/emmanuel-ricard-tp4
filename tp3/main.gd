@@ -11,3 +11,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+@export var monnaies = 0
+signal monnaie_collectee
+
+func augmenter_monnaies():
+	monnaies += 1
+	monnaie_collectee.emit(monnaies)
