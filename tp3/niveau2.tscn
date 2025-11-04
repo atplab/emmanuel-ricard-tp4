@@ -145,6 +145,36 @@ rotation = -1.5708
 scale = Vector2(0.963953, 1.205)
 texture = ExtResource("7_0knql")
 
+[node name="gouttes_plafond2" type="Area2D" parent="Poison"]
+position = Vector2(515, -863)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond2"]
+position = Vector2(-13, -25)
+rotation = 1.5708
+scale = Vector2(0.32, 0.40002)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond2/CollisionShape2D"]
+position = Vector2(43.7501, 0)
+rotation = -1.5708
+scale = Vector2(0.963953, 1.205)
+texture = ExtResource("7_0knql")
+
+[node name="gouttes_plafond3" type="Area2D" parent="Poison"]
+position = Vector2(541, -863)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond3"]
+position = Vector2(-13, -25)
+rotation = 1.5708
+scale = Vector2(0.32, 0.40002)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond3/CollisionShape2D"]
+position = Vector2(43.7501, 0)
+rotation = -1.5708
+scale = Vector2(0.963953, 1.205)
+texture = ExtResource("7_0knql")
+
 [node name="Industrial_plateformes" type="Node" parent="."]
 
 [node name="Industrial" type="StaticBody2D" parent="Industrial_plateformes"]
@@ -429,6 +459,30 @@ metadata/_edit_group_ = true
 position = Vector2(0, 24)
 texture = ExtResource("8_ec3qa")
 
+[node name="L_industrial8" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(648, -688)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial8"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/L_industrial8/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("7_csytb")
+
+[node name="R_industrial8" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(718, -688)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/R_industrial8"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/R_industrial8/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("8_ec3qa")
+
 [node name="Blocs" type="Node" parent="."]
 
 [node name="petitbloc" type="StaticBody2D" parent="Blocs"]
@@ -599,6 +653,90 @@ position = Vector2(0, 1.52588e-05)
 scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
 
+[node name="petitbloc13" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-428, -721)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc13"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc13/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc14" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-408, -721)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc14"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc14/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc15" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-388, -721)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc15"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc15/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc16" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-22, -605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc16"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc16/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc17" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-2, -605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc17"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc17/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc18" type="StaticBody2D" parent="Blocs"]
+position = Vector2(18, -605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc18"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc18/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
 [node name="player" parent="." instance=ExtResource("6_on60i")]
 position = Vector2(-272, -36)
 scale = Vector2(0.513591, 0.513591)
@@ -651,5 +789,7 @@ autoplay = "default"
 [connection signal="body_entered" from="porte" to="porte" method="_on_body_entered"]
 [connection signal="body_entered" from="Poison/bulle_sol" to="." method="_on_bulle_sol_body_entered"]
 [connection signal="body_entered" from="Poison/gouttes_plafond" to="." method="_on_gouttes_plafond_body_entered"]
+[connection signal="body_entered" from="Poison/gouttes_plafond2" to="." method="_on_gouttes_plafond_body_entered"]
+[connection signal="body_entered" from="Poison/gouttes_plafond3" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="coins/coins1" to="." method="_on_coins_1_body_entered"]
 [connection signal="body_entered" from="coins/coins2" to="." method="_on_coins_2_body_entered"]

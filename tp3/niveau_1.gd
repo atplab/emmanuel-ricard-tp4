@@ -1,12 +1,12 @@
 extends Node2D
 
-func _ready() -> void:
-	body_entered.connect(monnaie_collectee)
+#func _ready() -> void:
+	#body_entered.connect(monnaie_collectee)
 
-func monnaie_touchee(body):
-	if body is Player:
-		Main.augmenter_monnaies()
-		call_deferred("queue_free")
+#func monnaie_touchee(body):
+	#if body is Player:
+	#	Main.augmenter_monnaies()
+		#call_deferred("queue_free")
 
 func _on_coins_body_entered(body: Node2D) -> void:
 	$coins/coins1.visible = false  
@@ -63,6 +63,8 @@ func _on_bouton_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Main.porte_ouvrable = true
 		$porte/porte.play("Open")
+		$bouton/bouton.visible = false
+		$bouton/bouton.queue_free()
 	
 
 
