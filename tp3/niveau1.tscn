@@ -25,7 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://xmsricj51e2a" path="res://audio/calm coin.mp3" id="21_eyyip"]
 [ext_resource type="Texture2D" uid="uid://co2ecvfdlx3tv" path="res://img/items/silver_1.png" id="22_ug3om"]
 [ext_resource type="Texture2D" uid="uid://cqjlxyii1nfvq" path="res://img/items/silver_2.png" id="23_fskeg"]
-[ext_resource type="Script" uid="uid://d23hpqnxx0yhn" path="res://coins.gd" id="23_v1sc6"]
 [ext_resource type="Texture2D" uid="uid://6n1r6kd0s40r" path="res://img/items/silver_3.png" id="24_w1a7u"]
 [ext_resource type="Texture2D" uid="uid://dti7dmllr8m0s" path="res://img/items/silver_4.png" id="25_4uxrh"]
 [ext_resource type="AudioStream" uid="uid://dwryv5o5efccx" path="res://audio/golden coin.mp3" id="26_fskeg"]
@@ -109,6 +108,8 @@ size = Vector2(21.9999, 3.85089)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yysgw"]
 size = Vector2(16.5509, 1.74229)
+
+[sub_resource type="GDScript" id="GDScript_ex8sg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5al67"]
 radius = 38.7224
@@ -1065,7 +1066,7 @@ stream = ExtResource("10_b8t6s")
 [node name="coins" type="Node2D" parent="."]
 position = Vector2(474, 373)
 scale = Vector2(0.238095, 0.238095)
-script = ExtResource("23_v1sc6")
+script = SubResource("GDScript_ex8sg")
 
 [node name="coins2" type="Area2D" parent="coins"]
 position = Vector2(-399, 806.401)
