@@ -97,7 +97,7 @@ animations = [{
 script = ExtResource("1_7f8un")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(1079.94, -1018.58)
+position = Vector2(1078.94, -1018.58)
 scale = Vector2(0.918379, 0.918379)
 texture = ExtResource("1_iajut")
 
@@ -174,6 +174,21 @@ position = Vector2(43.7501, 0)
 rotation = -1.5708
 scale = Vector2(0.963953, 1.205)
 texture = ExtResource("7_0knql")
+
+[node name="bulle_sol2" type="Area2D" parent="Poison" groups=["ennemi"]]
+position = Vector2(297, -967)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/bulle_sol2"]
+position = Vector2(-23, -9.00003)
+rotation = 1.5708
+scale = Vector2(0.32, 1)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/bulle_sol2/CollisionShape2D"]
+position = Vector2(-115.625, 0)
+rotation = -1.5708
+scale = Vector2(1, 3.125)
+texture = ExtResource("8_vehya")
 
 [node name="Industrial_plateformes" type="Node" parent="."]
 
@@ -447,6 +462,48 @@ metadata/_edit_group_ = true
 position = Vector2(0, 24)
 texture = ExtResource("7_csytb")
 
+[node name="petitbloc16" type="StaticBody2D" parent="Industrial_plateformes/L_industrial7"]
+position = Vector2(-403, 119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial7/petitbloc16"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Industrial_plateformes/L_industrial7/petitbloc16/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc17" type="StaticBody2D" parent="Industrial_plateformes/L_industrial7"]
+position = Vector2(-383, 119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial7/petitbloc17"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Industrial_plateformes/L_industrial7/petitbloc17/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc18" type="StaticBody2D" parent="Industrial_plateformes/L_industrial7"]
+position = Vector2(-363, 119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial7/petitbloc18"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Industrial_plateformes/L_industrial7/petitbloc18/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
 [node name="R_industrial7" type="StaticBody2D" parent="Industrial_plateformes"]
 position = Vector2(451, -724)
 
@@ -480,6 +537,90 @@ one_way_collision = true
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/R_industrial8/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("8_ec3qa")
+
+[node name="L_industrial9" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(690, -865)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial9"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/L_industrial9/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("7_csytb")
+
+[node name="R_industrial9" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(760, -865)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/R_industrial9"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/R_industrial9/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("8_ec3qa")
+
+[node name="L_industrial10" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(247, -968)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial10"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/L_industrial10/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("7_csytb")
+
+[node name="R_industrial10" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(317, -968)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/R_industrial10"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/R_industrial10/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("8_ec3qa")
+
+[node name="Industrial8" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(843, -1042)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/Industrial8"]
+shape = SubResource("RectangleShape2D_sm8av")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/Industrial8/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("4_sm8av")
+
+[node name="L_industrial11" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(773, -1042)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial11"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/L_industrial11/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("7_csytb")
+
+[node name="R_industrial11" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(913, -1042)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/R_industrial11"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/R_industrial11/CollisionShape2D"]
 position = Vector2(0, 24)
 texture = ExtResource("8_ec3qa")
 
@@ -696,7 +837,7 @@ scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
 
 [node name="petitbloc16" type="StaticBody2D" parent="Blocs"]
-position = Vector2(-22, -605)
+position = Vector2(-436, -904)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc16"]
 position = Vector2(923, -174)
@@ -710,7 +851,7 @@ scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
 
 [node name="petitbloc17" type="StaticBody2D" parent="Blocs"]
-position = Vector2(-2, -605)
+position = Vector2(-416, -904)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc17"]
 position = Vector2(923, -174)
@@ -724,7 +865,7 @@ scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
 
 [node name="petitbloc18" type="StaticBody2D" parent="Blocs"]
-position = Vector2(18, -605)
+position = Vector2(-396, -904)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc18"]
 position = Vector2(923, -174)
@@ -786,10 +927,59 @@ shape = SubResource("CircleShape2D_0knql")
 sprite_frames = SubResource("SpriteFrames_w2yff")
 autoplay = "default"
 
+[node name="coins3" type="Area2D" parent="coins"]
+position = Vector2(643, -531)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins3"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins3"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins4" type="Area2D" parent="coins"]
+position = Vector2(261, -678)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins4"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins4"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins5" type="Area2D" parent="coins"]
+position = Vector2(862, -882)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins5"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins5"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins6" type="Area2D" parent="coins"]
+position = Vector2(371, -1070)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins6"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins6"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
 [connection signal="body_entered" from="porte" to="porte" method="_on_body_entered"]
 [connection signal="body_entered" from="Poison/bulle_sol" to="." method="_on_bulle_sol_body_entered"]
 [connection signal="body_entered" from="Poison/gouttes_plafond" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="Poison/gouttes_plafond2" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="Poison/gouttes_plafond3" to="." method="_on_gouttes_plafond_body_entered"]
+[connection signal="body_entered" from="Poison/bulle_sol2" to="." method="_on_bulle_sol_body_entered"]
 [connection signal="body_entered" from="coins/coins1" to="." method="_on_coins_1_body_entered"]
 [connection signal="body_entered" from="coins/coins2" to="." method="_on_coins_2_body_entered"]
+[connection signal="body_entered" from="coins/coins3" to="." method="_on_coins_3_body_entered"]
+[connection signal="body_entered" from="coins/coins4" to="." method="_on_coins_4_body_entered"]
+[connection signal="body_entered" from="coins/coins5" to="." method="_on_coins_5_body_entered"]
+[connection signal="body_entered" from="coins/coins6" to="." method="_on_coins_6_body_entered"]

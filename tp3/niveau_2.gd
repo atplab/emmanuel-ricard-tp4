@@ -29,3 +29,27 @@ func _on_gouttes_plafond_body_entered(body: Node2D) -> void:
 		var timer = get_tree().create_timer(2)
 		await timer.timeout
 		get_tree().reload_current_scene()
+
+
+func _on_coins_3_body_entered(body: Node2D) -> void:
+	$coins/coins2.visible = false  
+	$coins/coins2.queue_free()
+	$coins/coins.play()
+
+
+func _on_coins_4_body_entered(body: Node2D) -> void:
+	$coins/coins2.visible = false  
+	$coins/coins2.queue_free()
+	$coins/coins.play()
+
+
+func _on_coins_5_body_entered(body: Node2D) -> void:
+	$coins/coins2.visible = false  
+	$coins/coins2.queue_free()
+	$coins/coins.play()
+
+
+func _on_coins_6_body_entered(body: Node2D) -> void:
+	$coins/coins2.visible = false  
+	$coins/coins2.queue_free()
+	$coins/coins.play()
