@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b1ro10u7is8fx"]
+[gd_scene load_steps=47 format=3 uid="uid://b1ro10u7is8fx"]
 
 [ext_resource type="Script" uid="uid://ct3t1w0kcqaoi" path="res://niveau_1.gd" id="1_2db7c"]
 [ext_resource type="Texture2D" uid="uid://cn6wl1t5fdtx6" path="res://img/World/Environment/mushroom_red.png" id="1_cte38"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dg84hgaq87w5t" path="res://img/World/Tiles/platformPack_tile052.png" id="31_v1sc6"]
 [ext_resource type="Texture2D" uid="uid://dyglcpakieyjk" path="res://img/World/Tiles/platformPack_tile048.png" id="32_285be"]
 [ext_resource type="Texture2D" uid="uid://cb7743n3pqwlg" path="res://img/World/Tiles/platformPack_tile064.png" id="33_ixoue"]
+[ext_resource type="PackedScene" uid="uid://cssbf7mw2w2k4" path="res://hud.tscn" id="33_v1sc6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajgjv"]
 radius = 20.0
@@ -1197,6 +1198,10 @@ sprite_frames = SubResource("SpriteFrames_reu15")
 [node name="silvercoins" type="AudioStreamPlayer2D" parent="coins/silvercoin"]
 position = Vector2(823.201, -516.6)
 stream = ExtResource("26_fskeg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("33_v1sc6")]
 
 [connection signal="body_entered" from="bouton" to="." method="_on_bouton_body_entered"]
 [connection signal="body_entered" from="porte" to="." method="_on_porte_body_entered"]

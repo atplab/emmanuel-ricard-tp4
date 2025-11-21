@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://mfm4us8ni1gg"]
+[gd_scene load_steps=27 format=3 uid="uid://mfm4us8ni1gg"]
 
 [ext_resource type="Script" uid="uid://dj7cpwtl53of7" path="res://niveau_2.gd" id="1_7f8un"]
 [ext_resource type="Texture2D" uid="uid://tpwyp2knky41" path="res://img/World/industrial.jpg" id="1_iajut"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d2024kddvw3bf" path="res://img/items/bronze_3.png" id="13_am11p"]
 [ext_resource type="Texture2D" uid="uid://bfsmiqcdo63mp" path="res://img/items/bronze_4.png" id="14_ukt2v"]
 [ext_resource type="AudioStream" uid="uid://xmsricj51e2a" path="res://audio/calm coin.mp3" id="16_am11p"]
+[ext_resource type="PackedScene" uid="uid://cssbf7mw2w2k4" path="res://hud.tscn" id="18_0knql"]
 
 [sub_resource type="GDScript" id="GDScript_ukt2v"]
 script/source = "extends Area2D
@@ -971,6 +972,76 @@ shape = SubResource("CircleShape2D_0knql")
 sprite_frames = SubResource("SpriteFrames_w2yff")
 autoplay = "default"
 
+[node name="coins7" type="Area2D" parent="coins"]
+position = Vector2(784, -1108)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins7"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins7"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins8" type="Area2D" parent="coins"]
+position = Vector2(881, -1137)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins8"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins8"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins9" type="Area2D" parent="coins"]
+position = Vector2(845, -1160)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins9"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins9"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins10" type="Area2D" parent="coins"]
+position = Vector2(811, -1139)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins10"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins10"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins11" type="Area2D" parent="coins"]
+position = Vector2(898, -1110)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins11"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins11"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="coins12" type="Area2D" parent="coins"]
+position = Vector2(844, -1110)
+scale = Vector2(0.199995, 0.199995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins12"]
+shape = SubResource("CircleShape2D_0knql")
+
+[node name="coins1" type="AnimatedSprite2D" parent="coins/coins12"]
+sprite_frames = SubResource("SpriteFrames_w2yff")
+autoplay = "default"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("18_0knql")]
+
 [connection signal="body_entered" from="porte" to="porte" method="_on_body_entered"]
 [connection signal="body_entered" from="Poison/bulle_sol" to="." method="_on_bulle_sol_body_entered"]
 [connection signal="body_entered" from="Poison/gouttes_plafond" to="." method="_on_gouttes_plafond_body_entered"]
@@ -983,3 +1054,9 @@ autoplay = "default"
 [connection signal="body_entered" from="coins/coins4" to="." method="_on_coins_4_body_entered"]
 [connection signal="body_entered" from="coins/coins5" to="." method="_on_coins_5_body_entered"]
 [connection signal="body_entered" from="coins/coins6" to="." method="_on_coins_6_body_entered"]
+[connection signal="body_entered" from="coins/coins7" to="." method="_on_coins_7_body_entered"]
+[connection signal="body_entered" from="coins/coins8" to="." method="_on_coins_8_body_entered"]
+[connection signal="body_entered" from="coins/coins9" to="." method="_on_coins_9_body_entered"]
+[connection signal="body_entered" from="coins/coins10" to="." method="_on_coins_10_body_entered"]
+[connection signal="body_entered" from="coins/coins11" to="." method="_on_coins_11_body_entered"]
+[connection signal="body_entered" from="coins/coins12" to="." method="_on_coins_12_body_entered"]
