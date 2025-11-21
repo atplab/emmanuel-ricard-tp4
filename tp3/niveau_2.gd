@@ -102,5 +102,9 @@ func _on_coins_12_body_entered(body: Node2D) -> void:
 	$coins/coins.play()
 
 
-func _on_gouttes_plafond_4_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+
+func _on_coins_13_body_entered(body: Node2D) -> void:
+	$coins/coins12.visible = false  
+	Main.augmenter_monnaies()
+	$coins/coins12.queue_free()
+	$coins/coins.play()
