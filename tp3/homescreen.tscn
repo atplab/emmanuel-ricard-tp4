@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dx7indmqfudrf" path="res://img/World/Background/bg_layer1.png" id="2_edeuv"]
 [ext_resource type="Texture2D" uid="uid://pdmig8tsomo" path="res://img/character/Characters/platformChar_idle.png" id="3_c2ysq"]
 [ext_resource type="Texture2D" uid="uid://b54u4ukyawtjt" path="res://img/character/Characters/platformChar_happy.png" id="4_a17e7"]
-[ext_resource type="AudioStream" uid="uid://c06r8nbdqmu6" path="res://audio/grandpa dying.mp3" id="5_c2ysq"]
+[ext_resource type="AudioStream" uid="uid://cppv8322d8tms" path="res://audio/bass.mp3" id="5_c2ysq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0us7"]
 animations = [{
