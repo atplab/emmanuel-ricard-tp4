@@ -98,8 +98,8 @@ animations = [{
 script = ExtResource("1_7f8un")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(1078.94, -1018.58)
-scale = Vector2(0.918379, 0.918379)
+position = Vector2(430.468, -587.078)
+scale = Vector2(0.613646, 0.613646)
 texture = ExtResource("1_iajut")
 
 [node name="porte" type="Area2D" parent="."]
@@ -190,6 +190,66 @@ position = Vector2(-115.625, 0)
 rotation = -1.5708
 scale = Vector2(1, 3.125)
 texture = ExtResource("8_vehya")
+
+[node name="gouttes_plafond4" type="Area2D" parent="Poison"]
+position = Vector2(-29, -815)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond4"]
+position = Vector2(-13, -25)
+rotation = 1.5708
+scale = Vector2(0.32, 0.40002)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond4/CollisionShape2D"]
+position = Vector2(43.7501, 0)
+rotation = -1.5708
+scale = Vector2(0.963953, 1.205)
+texture = ExtResource("7_0knql")
+
+[node name="gouttes_plafond5" type="Area2D" parent="Poison"]
+position = Vector2(-3, -815)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond5"]
+position = Vector2(-13, -25)
+rotation = 1.5708
+scale = Vector2(0.32, 0.40002)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond5/CollisionShape2D"]
+position = Vector2(43.7501, 0)
+rotation = -1.5708
+scale = Vector2(0.963953, 1.205)
+texture = ExtResource("7_0knql")
+
+[node name="gouttes_plafond6" type="Area2D" parent="Poison"]
+position = Vector2(38, -916)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond6"]
+position = Vector2(-13, -25)
+rotation = 1.5708
+scale = Vector2(0.32, 0.40002)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond6/CollisionShape2D"]
+position = Vector2(43.7501, 0)
+rotation = -1.5708
+scale = Vector2(0.963953, 1.205)
+texture = ExtResource("7_0knql")
+
+[node name="gouttes_plafond7" type="Area2D" parent="Poison"]
+position = Vector2(64, -916)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond7"]
+position = Vector2(-13, -25)
+rotation = 1.5708
+scale = Vector2(0.32, 0.40002)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond7/CollisionShape2D"]
+position = Vector2(43.7501, 0)
+rotation = -1.5708
+scale = Vector2(0.963953, 1.205)
+texture = ExtResource("7_0knql")
 
 [node name="Industrial_plateformes" type="Node" parent="."]
 
@@ -463,48 +523,6 @@ metadata/_edit_group_ = true
 position = Vector2(0, 24)
 texture = ExtResource("7_csytb")
 
-[node name="petitbloc16" type="StaticBody2D" parent="Industrial_plateformes/L_industrial7"]
-position = Vector2(-403, 119)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial7/petitbloc16"]
-position = Vector2(923, -174)
-shape = SubResource("RectangleShape2D_0knql")
-one_way_collision = true
-metadata/_edit_group_ = true
-
-[node name="P_industrial" type="Sprite2D" parent="Industrial_plateformes/L_industrial7/petitbloc16/CollisionShape2D"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.280004, 0.280004)
-texture = ExtResource("10_ukt2v")
-
-[node name="petitbloc17" type="StaticBody2D" parent="Industrial_plateformes/L_industrial7"]
-position = Vector2(-383, 119)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial7/petitbloc17"]
-position = Vector2(923, -174)
-shape = SubResource("RectangleShape2D_0knql")
-one_way_collision = true
-metadata/_edit_group_ = true
-
-[node name="P_industrial" type="Sprite2D" parent="Industrial_plateformes/L_industrial7/petitbloc17/CollisionShape2D"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.280004, 0.280004)
-texture = ExtResource("10_ukt2v")
-
-[node name="petitbloc18" type="StaticBody2D" parent="Industrial_plateformes/L_industrial7"]
-position = Vector2(-363, 119)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial7/petitbloc18"]
-position = Vector2(923, -174)
-shape = SubResource("RectangleShape2D_0knql")
-one_way_collision = true
-metadata/_edit_group_ = true
-
-[node name="P_industrial" type="Sprite2D" parent="Industrial_plateformes/L_industrial7/petitbloc18/CollisionShape2D"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.280004, 0.280004)
-texture = ExtResource("10_ukt2v")
-
 [node name="R_industrial7" type="StaticBody2D" parent="Industrial_plateformes"]
 position = Vector2(451, -724)
 
@@ -622,6 +640,30 @@ one_way_collision = true
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/R_industrial11/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("8_ec3qa")
+
+[node name="L_industrial12" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(-64, -715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/L_industrial12"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/L_industrial12/CollisionShape2D"]
+position = Vector2(0, 24)
+texture = ExtResource("7_csytb")
+
+[node name="R_industrial12" type="StaticBody2D" parent="Industrial_plateformes"]
+position = Vector2(6, -715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Industrial_plateformes/R_industrial12"]
+shape = SubResource("RectangleShape2D_sm8av")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Industrial_plateformes/R_industrial12/CollisionShape2D"]
 position = Vector2(0, 24)
 texture = ExtResource("8_ec3qa")
 
@@ -879,6 +921,132 @@ position = Vector2(0, 1.52588e-05)
 scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
 
+[node name="petitbloc19" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-22, -605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc19"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc19/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc20" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-2, -605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc20"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc20/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc21" type="StaticBody2D" parent="Blocs"]
+position = Vector2(18, -605)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc21"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc21/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc22" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-972, -675)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc22"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc22/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc23" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-952, -675)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc23"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc23/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc24" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-932, -675)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc24"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc24/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc25" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-905, -776)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc25"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc25/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc26" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-885, -776)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc26"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc26/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc27" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-865, -776)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc27"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc27/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
 [node name="player" parent="." instance=ExtResource("6_on60i")]
 position = Vector2(-272, -36)
 scale = Vector2(0.513591, 0.513591)
@@ -1048,6 +1216,10 @@ autoplay = "default"
 [connection signal="body_entered" from="Poison/gouttes_plafond2" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="Poison/gouttes_plafond3" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="Poison/bulle_sol2" to="." method="_on_bulle_sol_body_entered"]
+[connection signal="body_entered" from="Poison/gouttes_plafond4" to="." method="_on_gouttes_plafond_body_entered"]
+[connection signal="body_entered" from="Poison/gouttes_plafond5" to="." method="_on_gouttes_plafond_body_entered"]
+[connection signal="body_entered" from="Poison/gouttes_plafond6" to="." method="_on_gouttes_plafond_body_entered"]
+[connection signal="body_entered" from="Poison/gouttes_plafond7" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="coins/coins1" to="." method="_on_coins_1_body_entered"]
 [connection signal="body_entered" from="coins/coins2" to="." method="_on_coins_2_body_entered"]
 [connection signal="body_entered" from="coins/coins3" to="." method="_on_coins_3_body_entered"]
