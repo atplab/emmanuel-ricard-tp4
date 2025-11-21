@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dx7indmqfudrf" path="res://img/World/Background/bg_layer1.png" id="2_edeuv"]
 [ext_resource type="Texture2D" uid="uid://pdmig8tsomo" path="res://img/character/Characters/platformChar_idle.png" id="3_c2ysq"]
 [ext_resource type="Texture2D" uid="uid://b54u4ukyawtjt" path="res://img/character/Characters/platformChar_happy.png" id="4_a17e7"]
-[ext_resource type="AudioStream" uid="uid://w1jrdk5rt0u5" path="res://audio/background music.mp3" id="5_c2ysq"]
+[ext_resource type="AudioStream" uid="uid://c06r8nbdqmu6" path="res://audio/grandpa dying.mp3" id="5_c2ysq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0us7"]
 animations = [{
@@ -91,6 +91,7 @@ shadow_color = Color(0.707964, 0.681737, 0.461887, 0)
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_c2ysq")
+volume_db = -6.972
 autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

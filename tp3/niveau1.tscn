@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://jcvikc241btk" path="res://img/character/Enemies/wingMan2.png" id="11_rm7ey"]
 [ext_resource type="Texture2D" uid="uid://fbmdei2xtcds" path="res://img/character/Enemies/wingMan3.png" id="12_xmwx5"]
 [ext_resource type="Texture2D" uid="uid://de7v3qyhwao0" path="res://img/character/Enemies/wingMan4.png" id="13_cdtrv"]
-[ext_resource type="AudioStream" uid="uid://w1jrdk5rt0u5" path="res://audio/background music.mp3" id="15_rm7ey"]
 [ext_resource type="AudioStream" uid="uid://cwahu06v8c53w" path="res://audio/crack.mp3" id="15_xmwx5"]
 [ext_resource type="Texture2D" uid="uid://c8qctik1cbxrw" path="res://img/items/bronze_1.png" id="17_qm8in"]
 [ext_resource type="Texture2D" uid="uid://bywidsi2oq3pu" path="res://img/items/bronze_2.png" id="18_eyyip"]
@@ -24,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bfsmiqcdo63mp" path="res://img/items/bronze_4.png" id="20_h2d1a"]
 [ext_resource type="AudioStream" uid="uid://xmsricj51e2a" path="res://audio/calm coin.mp3" id="21_eyyip"]
 [ext_resource type="Texture2D" uid="uid://co2ecvfdlx3tv" path="res://img/items/silver_1.png" id="22_ug3om"]
+[ext_resource type="AudioStream" uid="uid://cc71stphbapbk" path="res://audio/mamamamown.mp3" id="23_285be"]
 [ext_resource type="Texture2D" uid="uid://cqjlxyii1nfvq" path="res://img/items/silver_2.png" id="23_fskeg"]
 [ext_resource type="Texture2D" uid="uid://6n1r6kd0s40r" path="res://img/items/silver_3.png" id="24_w1a7u"]
 [ext_resource type="Texture2D" uid="uid://dti7dmllr8m0s" path="res://img/items/silver_4.png" id="25_4uxrh"]
@@ -1068,10 +1068,6 @@ position = Vector2(388, -343)
 scale = Vector2(1.44121, 12.2012)
 shape = SubResource("RectangleShape2D_yysgw")
 
-[node name="background music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("15_rm7ey")
-autoplay = true
-
 [node name="player" parent="." instance=ExtResource("4_w8phw")]
 position = Vector2(56, 683)
 scale = Vector2(0.513591, 0.513591)
@@ -1091,6 +1087,11 @@ position_smoothing_speed = 4.0
 position = Vector2(1841.93, 613.328)
 scale = Vector2(0.501062, 0.501062)
 stream = ExtResource("10_b8t6s")
+
+[node name="mort" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-109.036, -1329.85)
+scale = Vector2(1.94707, 1.94707)
+stream = ExtResource("23_285be")
 
 [node name="coins" type="Node2D" parent="."]
 position = Vector2(474, 373)
@@ -1181,7 +1182,7 @@ frame_progress = 0.35892
 [node name="coins" type="AudioStreamPlayer2D" parent="coins"]
 position = Vector2(-3150, -1520.4)
 stream = ExtResource("21_eyyip")
-volume_db = 9.0
+volume_db = 1.115
 
 [node name="silvercoin" type="Node2D" parent="coins"]
 position = Vector2(42, -67.2001)

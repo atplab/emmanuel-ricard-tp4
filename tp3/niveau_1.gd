@@ -101,6 +101,7 @@ func _on_bee_1_body_entered(body: Node2D) -> void:
 func _on_dead_player_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.hide()
+		$player/mort.play()
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		var timer = get_tree().create_timer(2)
 		await timer.timeout
@@ -123,6 +124,7 @@ func _on_bee_2_body_entered(body: Node2D) -> void:
 func _on_dead_player_2_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.hide()
+		$player/mort.play()
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		var timer = get_tree().create_timer(2)
 		await timer.timeout

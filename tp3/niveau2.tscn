@@ -267,6 +267,23 @@ rotation = -1.5708
 scale = Vector2(1, 3.125)
 texture = ExtResource("8_vehya")
 
+[node name="bulle_sol4" type="Area2D" parent="Poison" groups=["ennemi"]]
+position = Vector2(1195, 305)
+rotation = 0.000810385
+scale = Vector2(35.8405, 1.98508)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/bulle_sol4"]
+position = Vector2(-23, -9.00003)
+rotation = 1.5708
+scale = Vector2(0.32, 1)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="Poison/bulle_sol4/CollisionShape2D"]
+position = Vector2(-115.625, 0)
+rotation = -1.5708
+scale = Vector2(1, 3.125)
+texture = ExtResource("8_vehya")
+
 [node name="Industrial_plateformes" type="Node" parent="."]
 
 [node name="Industrial" type="StaticBody2D" parent="Industrial_plateformes"]
@@ -1099,7 +1116,7 @@ autoplay = "default"
 [node name="coins" type="AudioStreamPlayer2D" parent="coins"]
 position = Vector2(-3150, -1520.4)
 stream = ExtResource("16_am11p")
-volume_db = 9.0
+volume_db = 1.156
 
 [node name="coins2" type="Area2D" parent="coins"]
 position = Vector2(886, -184)
@@ -1248,6 +1265,7 @@ autoplay = "default"
 [connection signal="body_entered" from="Poison/gouttes_plafond6" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="Poison/gouttes_plafond7" to="." method="_on_gouttes_plafond_body_entered"]
 [connection signal="body_entered" from="Poison/bulle_sol3" to="." method="_on_bulle_sol_body_entered"]
+[connection signal="body_entered" from="Poison/bulle_sol4" to="." method="_on_bulle_sol_body_entered"]
 [connection signal="body_entered" from="coins/coins1" to="." method="_on_coins_1_body_entered"]
 [connection signal="body_entered" from="coins/coins2" to="." method="_on_coins_2_body_entered"]
 [connection signal="body_entered" from="coins/coins3" to="." method="_on_coins_3_body_entered"]

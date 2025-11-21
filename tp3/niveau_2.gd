@@ -18,15 +18,16 @@ func _on_coins_2_body_entered(body: Node2D) -> void:
 func _on_bulle_sol_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.hide()
+		$player/mort.play()
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		var timer = get_tree().create_timer(2)
 		await timer.timeout
-		get_tree().reload_current_scene()
-
+	
 
 func _on_gouttes_plafond_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.hide()
+		$player/mort.play()
 		body.process_mode = Node.PROCESS_MODE_DISABLED
 		var timer = get_tree().create_timer(2)
 		await timer.timeout
