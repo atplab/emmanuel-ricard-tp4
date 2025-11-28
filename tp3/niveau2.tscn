@@ -1,22 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://mfm4us8ni1gg"]
+[gd_scene load_steps=20 format=3 uid="uid://mfm4us8ni1gg"]
 
 [ext_resource type="Script" uid="uid://dj7cpwtl53of7" path="res://niveau_2.gd" id="1_7f8un"]
 [ext_resource type="Texture2D" uid="uid://tpwyp2knky41" path="res://img/World/industrial.jpg" id="1_iajut"]
 [ext_resource type="Texture2D" uid="uid://dg84hgaq87w5t" path="res://img/World/Tiles/platformPack_tile052.png" id="2_sm8av"]
 [ext_resource type="Texture2D" uid="uid://dyglcpakieyjk" path="res://img/World/Tiles/platformPack_tile048.png" id="3_iajut"]
 [ext_resource type="Texture2D" uid="uid://c2rk8ljhfh361" path="res://img/World/industrial/platformIndustrial_036.png" id="4_sm8av"]
+[ext_resource type="PackedScene" uid="uid://ctgh61po84njd" path="res://assets/bulle_sol.tscn" id="5_7f8un"]
+[ext_resource type="PackedScene" uid="uid://b6rv2cncwmnxq" path="res://assets/gouttes_plafond.tscn" id="6_am11p"]
 [ext_resource type="PackedScene" uid="uid://cgjqlkugnakod" path="res://player.tscn" id="6_on60i"]
-[ext_resource type="Texture2D" uid="uid://c7cs7b3fmxky0" path="res://img/World/industrial/platformIndustrial_026.png" id="7_0knql"]
 [ext_resource type="Texture2D" uid="uid://bs5wjyqdfx557" path="res://img/World/industrial/platformIndustrial_035.png" id="7_csytb"]
 [ext_resource type="AudioStream" uid="uid://cg61w4po2gjer" path="res://audio/jump.mp3" id="7_vehya"]
 [ext_resource type="Texture2D" uid="uid://mcwce4dhvwe6" path="res://img/World/industrial/platformIndustrial_037.png" id="8_ec3qa"]
-[ext_resource type="Texture2D" uid="uid://8pqa0ts14dxr" path="res://img/World/industrial/platformIndustrial_012.png" id="8_vehya"]
 [ext_resource type="Texture2D" uid="uid://d1r6nskt7tqs4" path="res://img/World/industrial/platformIndustrial_029.png" id="10_ukt2v"]
-[ext_resource type="Texture2D" uid="uid://c8qctik1cbxrw" path="res://img/items/bronze_1.png" id="11_asq45"]
-[ext_resource type="Texture2D" uid="uid://bywidsi2oq3pu" path="res://img/items/bronze_2.png" id="12_7f8un"]
-[ext_resource type="Texture2D" uid="uid://d2024kddvw3bf" path="res://img/items/bronze_3.png" id="13_am11p"]
-[ext_resource type="Texture2D" uid="uid://bfsmiqcdo63mp" path="res://img/items/bronze_4.png" id="14_ukt2v"]
-[ext_resource type="AudioStream" uid="uid://xmsricj51e2a" path="res://audio/calm coin.mp3" id="16_am11p"]
+[ext_resource type="PackedScene" uid="uid://d2axth5dhjggi" path="res://assets/coins.tscn" id="13_w2yff"]
 [ext_resource type="PackedScene" uid="uid://cssbf7mw2w2k4" path="res://hud.tscn" id="18_0knql"]
 
 [sub_resource type="GDScript" id="GDScript_ukt2v"]
@@ -56,49 +52,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v2a8e"]
-custom_solver_bias = 0.451
-radius = 35.3553
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm8av"]
 size = Vector2(69, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0knql"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0knql"]
-radius = 38.7224
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w2yff"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_asq45")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_7f8un")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_am11p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ukt2v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_am11p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_7f8un")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7f8un")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(430.468, -587.078)
+position = Vector2(429, -520)
 scale = Vector2(0.613646, 0.613646)
 texture = ExtResource("1_iajut")
 
@@ -117,172 +80,40 @@ autoplay = "Closed"
 
 [node name="Poison" type="Node" parent="."]
 
-[node name="bulle_sol" type="Area2D" parent="Poison" groups=["ennemi"]]
+[node name="bulle_sol" parent="Poison" instance=ExtResource("5_7f8un")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/bulle_sol"]
-position = Vector2(-23, -9.00003)
-rotation = 1.5708
-scale = Vector2(0.32, 1)
-shape = SubResource("CircleShape2D_v2a8e")
-
-[node name="poison" type="Sprite2D" parent="Poison/bulle_sol/CollisionShape2D"]
-position = Vector2(-115.625, 0)
-rotation = -1.5708
-scale = Vector2(1, 3.125)
-texture = ExtResource("8_vehya")
-
-[node name="gouttes_plafond" type="Area2D" parent="Poison"]
+[node name="gouttes_plafond" parent="Poison" instance=ExtResource("6_am11p")]
 position = Vector2(908, -224)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond"]
-position = Vector2(-13, -25)
-rotation = 1.5708
-scale = Vector2(0.32, 0.40002)
-shape = SubResource("CircleShape2D_v2a8e")
+[node name="gouttes_plafond2" parent="Poison" instance=ExtResource("6_am11p")]
+position = Vector2(514, -863)
 
-[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond/CollisionShape2D"]
-position = Vector2(43.7501, 0)
-rotation = -1.5708
-scale = Vector2(0.963953, 1.205)
-texture = ExtResource("7_0knql")
-
-[node name="gouttes_plafond2" type="Area2D" parent="Poison"]
-position = Vector2(515, -863)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond2"]
-position = Vector2(-13, -25)
-rotation = 1.5708
-scale = Vector2(0.32, 0.40002)
-shape = SubResource("CircleShape2D_v2a8e")
-
-[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond2/CollisionShape2D"]
-position = Vector2(43.7501, 0)
-rotation = -1.5708
-scale = Vector2(0.963953, 1.205)
-texture = ExtResource("7_0knql")
-
-[node name="gouttes_plafond3" type="Area2D" parent="Poison"]
+[node name="gouttes_plafond3" parent="Poison" instance=ExtResource("6_am11p")]
 position = Vector2(541, -863)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond3"]
-position = Vector2(-13, -25)
-rotation = 1.5708
-scale = Vector2(0.32, 0.40002)
-shape = SubResource("CircleShape2D_v2a8e")
+[node name="bulle_sol2" parent="Poison" instance=ExtResource("5_7f8un")]
+position = Vector2(300, -963)
+scale = Vector2(1.44, 1.44)
 
-[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond3/CollisionShape2D"]
-position = Vector2(43.7501, 0)
-rotation = -1.5708
-scale = Vector2(0.963953, 1.205)
-texture = ExtResource("7_0knql")
-
-[node name="bulle_sol2" type="Area2D" parent="Poison" groups=["ennemi"]]
-position = Vector2(297, -967)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/bulle_sol2"]
-position = Vector2(-23, -9.00003)
-rotation = 1.5708
-scale = Vector2(0.32, 1)
-shape = SubResource("CircleShape2D_v2a8e")
-
-[node name="poison" type="Sprite2D" parent="Poison/bulle_sol2/CollisionShape2D"]
-position = Vector2(-115.625, 0)
-rotation = -1.5708
-scale = Vector2(1, 3.125)
-texture = ExtResource("8_vehya")
-
-[node name="gouttes_plafond4" type="Area2D" parent="Poison"]
+[node name="gouttes_plafond4" parent="Poison" instance=ExtResource("6_am11p")]
 position = Vector2(-12, -801)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond4"]
-position = Vector2(-13, -25)
-rotation = 1.5708
-scale = Vector2(0.32, 0.40002)
-shape = SubResource("CircleShape2D_v2a8e")
+[node name="gouttes_plafond5" parent="Poison" instance=ExtResource("6_am11p")]
+position = Vector2(15, -801)
 
-[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond4/CollisionShape2D"]
-position = Vector2(43.7501, 0)
-rotation = -1.5708
-scale = Vector2(0.963953, 1.205)
-texture = ExtResource("7_0knql")
-
-[node name="gouttes_plafond5" type="Area2D" parent="Poison"]
-position = Vector2(14, -801)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond5"]
-position = Vector2(-13, -25)
-rotation = 1.5708
-scale = Vector2(0.32, 0.40002)
-shape = SubResource("CircleShape2D_v2a8e")
-
-[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond5/CollisionShape2D"]
-position = Vector2(43.7501, 0)
-rotation = -1.5708
-scale = Vector2(0.963953, 1.205)
-texture = ExtResource("7_0knql")
-
-[node name="gouttes_plafond6" type="Area2D" parent="Poison"]
+[node name="gouttes_plafond6" parent="Poison" instance=ExtResource("6_am11p")]
 position = Vector2(55, -902)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond6"]
-position = Vector2(-13, -25)
-rotation = 1.5708
-scale = Vector2(0.32, 0.40002)
-shape = SubResource("CircleShape2D_v2a8e")
+[node name="gouttes_plafond7" parent="Poison" instance=ExtResource("6_am11p")]
+position = Vector2(82, -902)
 
-[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond6/CollisionShape2D"]
-position = Vector2(43.7501, 0)
-rotation = -1.5708
-scale = Vector2(0.963953, 1.205)
-texture = ExtResource("7_0knql")
+[node name="bulle_sol3" parent="Poison" instance=ExtResource("5_7f8un")]
+position = Vector2(61, -934)
+scale = Vector2(0.600004, 0.600004)
 
-[node name="gouttes_plafond7" type="Area2D" parent="Poison"]
-position = Vector2(81, -902)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/gouttes_plafond7"]
-position = Vector2(-13, -25)
-rotation = 1.5708
-scale = Vector2(0.32, 0.40002)
-shape = SubResource("CircleShape2D_v2a8e")
-
-[node name="poison" type="Sprite2D" parent="Poison/gouttes_plafond7/CollisionShape2D"]
-position = Vector2(43.7501, 0)
-rotation = -1.5708
-scale = Vector2(0.963953, 1.205)
-texture = ExtResource("7_0knql")
-
-[node name="bulle_sol3" type="Area2D" parent="Poison" groups=["ennemi"]]
-position = Vector2(60, -935)
-scale = Vector2(0.56, 0.56)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/bulle_sol3"]
-position = Vector2(-23, -9.00003)
-rotation = 1.5708
-scale = Vector2(0.32, 1)
-shape = SubResource("CircleShape2D_v2a8e")
-
-[node name="poison" type="Sprite2D" parent="Poison/bulle_sol3/CollisionShape2D"]
-position = Vector2(-115.625, 0)
-rotation = -1.5708
-scale = Vector2(1, 3.125)
-texture = ExtResource("8_vehya")
-
-[node name="bulle_sol4" type="Area2D" parent="Poison" groups=["ennemi"]]
-position = Vector2(1195, 305)
-rotation = 0.000810385
-scale = Vector2(35.8405, 1.98508)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison/bulle_sol4"]
-position = Vector2(-23, -9.00003)
-rotation = 1.5708
-scale = Vector2(0.32, 1)
-shape = SubResource("CircleShape2D_v2a8e")
-
-[node name="poison" type="Sprite2D" parent="Poison/bulle_sol4/CollisionShape2D"]
-position = Vector2(-115.625, 0)
-rotation = -1.5708
-scale = Vector2(1, 3.125)
-texture = ExtResource("8_vehya")
+[node name="bulle_sol4" parent="Poison" instance=ExtResource("5_7f8un")]
+position = Vector2(1425, 314)
+scale = Vector2(42.24, 2.8)
 
 [node name="Industrial_plateformes" type="Node" parent="."]
 
@@ -814,20 +645,6 @@ position = Vector2(0, 1.52588e-05)
 scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
 
-[node name="petitbloc9" type="StaticBody2D" parent="Blocs"]
-position = Vector2(-98, -176)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc9"]
-position = Vector2(923, -174)
-shape = SubResource("RectangleShape2D_0knql")
-one_way_collision = true
-metadata/_edit_group_ = true
-
-[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc9/CollisionShape2D"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.280004, 0.280004)
-texture = ExtResource("10_ukt2v")
-
 [node name="petitbloc10" type="StaticBody2D" parent="Blocs"]
 position = Vector2(-255, -262)
 
@@ -852,20 +669,6 @@ one_way_collision = true
 metadata/_edit_group_ = true
 
 [node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc11/CollisionShape2D"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.280004, 0.280004)
-texture = ExtResource("10_ukt2v")
-
-[node name="petitbloc12" type="StaticBody2D" parent="Blocs"]
-position = Vector2(-215, -262)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc12"]
-position = Vector2(923, -174)
-shape = SubResource("RectangleShape2D_0knql")
-one_way_collision = true
-metadata/_edit_group_ = true
-
-[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc12/CollisionShape2D"]
 position = Vector2(0, 1.52588e-05)
 scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
@@ -908,20 +711,6 @@ one_way_collision = true
 metadata/_edit_group_ = true
 
 [node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc15/CollisionShape2D"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.280004, 0.280004)
-texture = ExtResource("10_ukt2v")
-
-[node name="petitbloc16" type="StaticBody2D" parent="Blocs"]
-position = Vector2(-436, -904)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc16"]
-position = Vector2(923, -174)
-shape = SubResource("RectangleShape2D_0knql")
-one_way_collision = true
-metadata/_edit_group_ = true
-
-[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc16/CollisionShape2D"]
 position = Vector2(0, 1.52588e-05)
 scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
@@ -978,20 +767,6 @@ one_way_collision = true
 metadata/_edit_group_ = true
 
 [node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc20/CollisionShape2D"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.280004, 0.280004)
-texture = ExtResource("10_ukt2v")
-
-[node name="petitbloc21" type="StaticBody2D" parent="Blocs"]
-position = Vector2(18, -605)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc21"]
-position = Vector2(923, -174)
-shape = SubResource("RectangleShape2D_0knql")
-one_way_collision = true
-metadata/_edit_group_ = true
-
-[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc21/CollisionShape2D"]
 position = Vector2(0, 1.52588e-05)
 scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
@@ -1102,180 +877,40 @@ stream = ExtResource("7_vehya")
 
 [node name="coins" type="Node" parent="."]
 
-[node name="coins1" type="Area2D" parent="coins"]
-position = Vector2(40, -49)
-scale = Vector2(0.199995, 0.199995)
+[node name="coins1" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(46, -44)
+scale = Vector2(0.2, 0.2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins1"]
-shape = SubResource("CircleShape2D_0knql")
+[node name="coins2" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(413, -149)
+scale = Vector2(0.2, 0.2)
 
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins1"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
+[node name="coins3" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(909, -199)
+scale = Vector2(0.2, 0.2)
 
-[node name="coins" type="AudioStreamPlayer2D" parent="coins"]
-position = Vector2(-3150, -1520.4)
-stream = ExtResource("16_am11p")
-volume_db = 1.156
+[node name="coins4" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(625, -541)
+scale = Vector2(0.2, 0.2)
 
-[node name="coins2" type="Area2D" parent="coins"]
-position = Vector2(886, -184)
-scale = Vector2(0.199995, 0.199995)
+[node name="coins5" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(290, -749)
+scale = Vector2(0.2, 0.2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins2"]
-shape = SubResource("CircleShape2D_0knql")
+[node name="coins6" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(606, -943)
+scale = Vector2(0.2, 0.2)
 
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins2"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
+[node name="coins7" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(332, -1009)
+scale = Vector2(0.2, 0.2)
 
-[node name="coins3" type="Area2D" parent="coins"]
-position = Vector2(643, -531)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins3"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins3"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins4" type="Area2D" parent="coins"]
-position = Vector2(261, -678)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins4"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins4"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins5" type="Area2D" parent="coins"]
-position = Vector2(862, -882)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins5"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins5"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins6" type="Area2D" parent="coins"]
-position = Vector2(371, -1070)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins6"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins6"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins7" type="Area2D" parent="coins"]
-position = Vector2(784, -1108)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins7"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins7"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins8" type="Area2D" parent="coins"]
-position = Vector2(881, -1137)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins8"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins8"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins9" type="Area2D" parent="coins"]
-position = Vector2(845, -1160)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins9"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins9"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins10" type="Area2D" parent="coins"]
-position = Vector2(811, -1139)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins10"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins10"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins11" type="Area2D" parent="coins"]
-position = Vector2(898, -1110)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins11"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins11"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins12" type="Area2D" parent="coins"]
-position = Vector2(844, -1110)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins12"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins12"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
-
-[node name="coins13" type="Area2D" parent="coins"]
-position = Vector2(76, -955)
-scale = Vector2(0.199995, 0.199995)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/coins13"]
-shape = SubResource("CircleShape2D_0knql")
-
-[node name="coins1" type="AnimatedSprite2D" parent="coins/coins13"]
-sprite_frames = SubResource("SpriteFrames_w2yff")
-autoplay = "default"
+[node name="coins8" parent="coins" instance=ExtResource("13_w2yff")]
+position = Vector2(676, -1029)
+scale = Vector2(0.2, 0.2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("18_0knql")]
 
 [connection signal="body_entered" from="porte" to="porte" method="_on_body_entered"]
-[connection signal="body_entered" from="Poison/bulle_sol" to="." method="_on_bulle_sol_body_entered"]
-[connection signal="body_entered" from="Poison/gouttes_plafond" to="." method="_on_gouttes_plafond_body_entered"]
-[connection signal="body_entered" from="Poison/gouttes_plafond2" to="." method="_on_gouttes_plafond_body_entered"]
-[connection signal="body_entered" from="Poison/gouttes_plafond3" to="." method="_on_gouttes_plafond_body_entered"]
-[connection signal="body_entered" from="Poison/bulle_sol2" to="." method="_on_bulle_sol_body_entered"]
-[connection signal="body_entered" from="Poison/gouttes_plafond4" to="." method="_on_gouttes_plafond_body_entered"]
-[connection signal="body_entered" from="Poison/gouttes_plafond5" to="." method="_on_gouttes_plafond_body_entered"]
-[connection signal="body_entered" from="Poison/gouttes_plafond6" to="." method="_on_gouttes_plafond_body_entered"]
-[connection signal="body_entered" from="Poison/gouttes_plafond7" to="." method="_on_gouttes_plafond_body_entered"]
-[connection signal="body_entered" from="Poison/bulle_sol3" to="." method="_on_bulle_sol_body_entered"]
-[connection signal="body_entered" from="Poison/bulle_sol4" to="." method="_on_bulle_sol_body_entered"]
-[connection signal="body_entered" from="coins/coins1" to="." method="_on_coins_1_body_entered"]
-[connection signal="body_entered" from="coins/coins2" to="." method="_on_coins_2_body_entered"]
-[connection signal="body_entered" from="coins/coins3" to="." method="_on_coins_3_body_entered"]
-[connection signal="body_entered" from="coins/coins4" to="." method="_on_coins_4_body_entered"]
-[connection signal="body_entered" from="coins/coins5" to="." method="_on_coins_5_body_entered"]
-[connection signal="body_entered" from="coins/coins6" to="." method="_on_coins_6_body_entered"]
-[connection signal="body_entered" from="coins/coins7" to="." method="_on_coins_7_body_entered"]
-[connection signal="body_entered" from="coins/coins8" to="." method="_on_coins_8_body_entered"]
-[connection signal="body_entered" from="coins/coins9" to="." method="_on_coins_9_body_entered"]
-[connection signal="body_entered" from="coins/coins10" to="." method="_on_coins_10_body_entered"]
-[connection signal="body_entered" from="coins/coins11" to="." method="_on_coins_11_body_entered"]
-[connection signal="body_entered" from="coins/coins12" to="." method="_on_coins_12_body_entered"]
-[connection signal="body_entered" from="coins/coins13" to="." method="_on_coins_13_body_entered"]

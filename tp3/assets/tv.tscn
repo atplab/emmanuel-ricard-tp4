@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dno1n3ew16yl1"]
+
+[ext_resource type="Texture2D" uid="uid://bd824m3p52bgc" path="res://img/World/industrial/platformIndustrial_032.png" id="1_clqfh"]
+[ext_resource type="Script" uid="uid://cep6f7uiaf80k" path="res://assets/tv.gd" id="1_cmywf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clqfh"]
+size = Vector2(68, 89.5)
+
+[node name="tv" type="Area2D"]
+script = ExtResource("1_cmywf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-150, -12)
+shape = SubResource("RectangleShape2D_clqfh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_clqfh")
+
+[node name="message" type="Node2D" parent="."]
+
+[node name="message" type="Label" parent="message"]
+offset_left = -38.0
+offset_top = -17.0
+offset_right = 167.0
+offset_bottom = 58.0
+scale = Vector2(0.321869, 0.321869)
+text = "La porte est
+barrée. Un bouton
+devrait l'ouvrir."
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

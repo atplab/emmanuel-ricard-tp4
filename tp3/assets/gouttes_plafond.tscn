@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6rv2cncwmnxq"]
+
+[ext_resource type="Texture2D" uid="uid://c7cs7b3fmxky0" path="res://img/World/industrial/platformIndustrial_026.png" id="1_3c4oo"]
+[ext_resource type="Script" uid="uid://2dfnusks5do" path="res://assets/gouttes_plafond.gd" id="1_ooqbs"]
+[ext_resource type="AudioStream" uid="uid://cc71stphbapbk" path="res://audio/mamamamown.mp3" id="3_p84t2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2a8e"]
+custom_solver_bias = 0.451
+radius = 35.3553
+
+[node name="gouttes_plafond" type="Area2D"]
+script = ExtResource("1_ooqbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, -25)
+rotation = 1.5708
+scale = Vector2(0.32, 0.40002)
+shape = SubResource("CircleShape2D_v2a8e")
+
+[node name="poison" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(43.7501, 0)
+rotation = -1.5708
+scale = Vector2(0.963953, 1.205)
+texture = ExtResource("1_3c4oo")
+
+[node name="mort" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-109.036, -1329.85)
+scale = Vector2(1.94707, 1.94707)
+stream = ExtResource("3_p84t2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

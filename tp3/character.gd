@@ -11,6 +11,29 @@ enum Etat {
 	SAUT
 }
 
+@export var zoom_duration := 0.4
+
+var zoom_tween
+
+func zoom_in() :
+	var camera = get_node("Camera2D")
+	if camera :
+		#camera.zoom = Vector2(3,3)
+		zoom_tween = self.create_tween()
+		zoom_tween.set_trans(Tween.TRANS_CUBIC)
+		zoom_tween.parallel().tween_property(camera, "zoom", Vector2(4,4), zoom_duration)
+		zoom_tween.parallel().tween_property(camera, "offset:x", 100, zoom_duration)
+
+
+func zoom_out() :
+	var camera = get_node("Camera2D")
+	if camera :
+		#camera.zoom = Vector2(1.5, 1.5)
+		zoom_tween = self.create_tween()
+		zoom_tween.set_trans(Tween.TRANS_CUBIC)
+		zoom_tween.parallel().tween_property(camera, "zoom", Vector2(1.5, 1.5), zoom_duration)
+		zoom_tween.parallel().tween_property(camera, "offset:x", 0, zoom_duration)
+
 var etat_courant = Etat.REPOS
 
 func _physics_process(delta: float) -> void:
