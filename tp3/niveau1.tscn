@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b1ro10u7is8fx"]
+[gd_scene load_steps=32 format=3 uid="uid://b1ro10u7is8fx"]
 
 [ext_resource type="Script" uid="uid://ct3t1w0kcqaoi" path="res://niveau_1.gd" id="1_2db7c"]
 [ext_resource type="Texture2D" uid="uid://cn6wl1t5fdtx6" path="res://img/World/Environment/mushroom_red.png" id="1_cte38"]
@@ -13,13 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://ce4fc6ykv4eyw" path="res://img/World/Environment/ground_sand_small.png" id="9_w1a7u"]
 [ext_resource type="AudioStream" uid="uid://cg61w4po2gjer" path="res://audio/jump.mp3" id="10_b8t6s"]
 [ext_resource type="PackedScene" uid="uid://ebxnr7an6arh" path="res://assets/bee.tscn" id="15_285be"]
+[ext_resource type="PackedScene" uid="uid://cd8vr0dtxydql" path="res://silvercoin.tscn" id="21_5al67"]
 [ext_resource type="AudioStream" uid="uid://xmsricj51e2a" path="res://audio/calm coin.mp3" id="21_eyyip"]
-[ext_resource type="Texture2D" uid="uid://co2ecvfdlx3tv" path="res://img/items/silver_1.png" id="22_ug3om"]
 [ext_resource type="AudioStream" uid="uid://cc71stphbapbk" path="res://audio/mamamamown.mp3" id="23_285be"]
-[ext_resource type="Texture2D" uid="uid://cqjlxyii1nfvq" path="res://img/items/silver_2.png" id="23_fskeg"]
 [ext_resource type="PackedScene" uid="uid://d2axth5dhjggi" path="res://assets/coins.tscn" id="24_lwrnq"]
-[ext_resource type="Texture2D" uid="uid://6n1r6kd0s40r" path="res://img/items/silver_3.png" id="24_w1a7u"]
-[ext_resource type="Texture2D" uid="uid://dti7dmllr8m0s" path="res://img/items/silver_4.png" id="25_4uxrh"]
 [ext_resource type="AudioStream" uid="uid://dwryv5o5efccx" path="res://audio/golden coin.mp3" id="26_fskeg"]
 [ext_resource type="PackedScene" uid="uid://dno1n3ew16yl1" path="res://assets/tv.tscn" id="27_w1a7u"]
 [ext_resource type="Texture2D" uid="uid://decya2c4jv5xp" path="res://img/mountain_bg.jpg" id="30_xeobv"]
@@ -72,45 +69,16 @@ size = Vector2(59.4878, 14.6342)
 
 [sub_resource type="GDScript" id="GDScript_ex8sg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5al67"]
-radius = 38.7224
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_reu15"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_ug3om")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_fskeg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_w1a7u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_4uxrh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_w1a7u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_fskeg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2db7c")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(164.447, -257.875)
-scale = Vector2(0.500493, 0.500493)
+position = Vector2(223.662, -297.374)
+scale = Vector2(0.517787, 0.517787)
 texture = ExtResource("30_xeobv")
 
 [node name="bouton" type="Area2D" parent="."]
-position = Vector2(36, -664)
+position = Vector2(222, -583)
 
 [node name="bouton" type="Sprite2D" parent="bouton"]
 position = Vector2(-88, -544)
@@ -121,6 +89,7 @@ position = Vector2(-88, -524)
 shape = SubResource("CapsuleShape2D_ajgjv")
 
 [node name="porte" type="Area2D" parent="."]
+position = Vector2(314, 76)
 
 [node name="porte" type="AnimatedSprite2D" parent="porte"]
 position = Vector2(-367, -1208)
@@ -838,7 +807,7 @@ texture = ExtResource("3_w8phw")
 flip_h = true
 
 [node name="Ground33" type="StaticBody2D" parent="pl_sand/big_grounds"]
-position = Vector2(-736.538, -618.902)
+position = Vector2(-546.294, -572.56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pl_sand/big_grounds/Ground33"]
 shape = SubResource("RectangleShape2D_cte38")
@@ -851,7 +820,7 @@ texture = ExtResource("3_w8phw")
 flip_h = true
 
 [node name="Ground34" type="StaticBody2D" parent="pl_sand/big_grounds"]
-position = Vector2(-542.636, -619.512)
+position = Vector2(-431.05, -570.731)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pl_sand/big_grounds/Ground34"]
 shape = SubResource("RectangleShape2D_cte38")
@@ -915,7 +884,7 @@ scale = Vector2(0.13, 0.13)
 texture = ExtResource("9_w1a7u")
 
 [node name="littlesand5" type="StaticBody2D" parent="pl_sand/little_grounds"]
-position = Vector2(-3841.52, -5641.35)
+position = Vector2(-3337.19, -5660.64)
 scale = Vector2(4.51969, 4.51969)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="pl_sand/little_grounds/littlesand5"]
@@ -927,7 +896,7 @@ scale = Vector2(0.13, 0.13)
 texture = ExtResource("9_w1a7u")
 
 [node name="littlesand6" type="StaticBody2D" parent="pl_sand/little_grounds"]
-position = Vector2(-3527.35, -5897.65)
+position = Vector2(-2667.51, -5688.2)
 scale = Vector2(4.51969, 4.51969)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="pl_sand/little_grounds/littlesand6"]
@@ -950,8 +919,8 @@ position = Vector2(485, -202)
 [node name="bee4" parent="ennemies" instance=ExtResource("15_285be")]
 position = Vector2(184, -561)
 
-[node name="bee5" parent="ennemies" instance=ExtResource("15_285be")]
-position = Vector2(181, -924)
+[node name="bee2" parent="ennemies" instance=ExtResource("15_285be")]
+position = Vector2(180, -924)
 
 [node name="player" parent="." instance=ExtResource("4_w8phw")]
 position = Vector2(56, 683)
@@ -1041,27 +1010,23 @@ volume_db = 1.115
 [node name="silvercoin" type="Node2D" parent="coins"]
 position = Vector2(42, -67.2001)
 
-[node name="silvercoin" type="Area2D" parent="coins/silvercoin"]
-position = Vector2(823.201, -516.601)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coins/silvercoin/silvercoin"]
-shape = SubResource("CircleShape2D_5al67")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coins/silvercoin/silvercoin"]
-sprite_frames = SubResource("SpriteFrames_reu15")
-
 [node name="silvercoins" type="AudioStreamPlayer2D" parent="coins/silvercoin"]
 position = Vector2(823.201, -516.6)
 stream = ExtResource("26_fskeg")
+
+[node name="silvercoin" parent="coins/silvercoin" instance=ExtResource("21_5al67")]
+position = Vector2(823.201, -516.601)
+
+[node name="silvercoin2" parent="coins/silvercoin" instance=ExtResource("21_5al67")]
+position = Vector2(-2553.6, -3931.2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("33_v1sc6")]
 
 [node name="tv" parent="." instance=ExtResource("27_w1a7u")]
-position = Vector2(-290, -1193)
+position = Vector2(21, -1117)
 scale = Vector2(0.52, 0.52)
 
 [connection signal="body_entered" from="bouton" to="." method="_on_bouton_body_entered"]
 [connection signal="body_entered" from="porte" to="." method="_on_porte_body_entered"]
-[connection signal="body_entered" from="coins/silvercoin/silvercoin" to="." method="_on_silvercoin_body_entered"]

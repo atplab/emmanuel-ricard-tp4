@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	body.sauter()
 	var timer = get_tree().create_timer(0.5)
 	await timer.timeout
-	$bee.queue_free()
+	queue_free()
 
 
 func _on_dead_player_body_entered(body: Node2D) -> void:

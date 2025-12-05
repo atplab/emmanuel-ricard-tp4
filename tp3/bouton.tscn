@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfo32qv8olche"]
+
+[ext_resource type="Texture2D" uid="uid://cb7743n3pqwlg" path="res://img/World/Tiles/platformPack_tile064.png" id="1_l26jf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajgjv"]
+radius = 20.0
+height = 40.0
+
+[node name="bouton" type="Area2D"]
+
+[node name="bouton" type="Sprite2D" parent="."]
+position = Vector2(-88, -544)
+texture = ExtResource("1_l26jf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-88, -524)
+shape = SubResource("CapsuleShape2D_ajgjv")

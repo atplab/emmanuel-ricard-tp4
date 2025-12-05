@@ -1,7 +1,8 @@
 extends Node2D
 
 var test = 0
-var porte_ouvrable
+var porte_ouvrable = false
+var porte_ouvrable2 = false 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

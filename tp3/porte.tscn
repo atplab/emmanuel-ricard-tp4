@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfm2odkvcd6k1"]
+
+[ext_resource type="Texture2D" uid="uid://dg84hgaq87w5t" path="res://img/World/Tiles/platformPack_tile052.png" id="1_h0nra"]
+[ext_resource type="Texture2D" uid="uid://dyglcpakieyjk" path="res://img/World/Tiles/platformPack_tile048.png" id="2_qias8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cg2na"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h0nra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_h0nra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_h0nra")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qias8")
+}],
+"loop": true,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_285be"]
+radius = 22.0
+height = 54.0
+
+[node name="porte" type="Area2D"]
+
+[node name="porte" type="AnimatedSprite2D" parent="."]
+position = Vector2(-367, -1208)
+sprite_frames = SubResource("SpriteFrames_cg2na")
+animation = &"Closed"
+autoplay = "Closed"
+frame = 2
+frame_progress = 0.409897
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-367, -1203)
+shape = SubResource("CapsuleShape2D_285be")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://mfm4us8ni1gg"]
+[gd_scene load_steps=27 format=3 uid="uid://mfm4us8ni1gg"]
 
 [ext_resource type="Script" uid="uid://dj7cpwtl53of7" path="res://niveau_2.gd" id="1_7f8un"]
-[ext_resource type="Texture2D" uid="uid://tpwyp2knky41" path="res://img/World/industrial.jpg" id="1_iajut"]
+[ext_resource type="Texture2D" uid="uid://drekys2aug4jb" path="res://img/World/desert.jpg" id="2_asq45"]
 [ext_resource type="Texture2D" uid="uid://dg84hgaq87w5t" path="res://img/World/Tiles/platformPack_tile052.png" id="2_sm8av"]
 [ext_resource type="Texture2D" uid="uid://dyglcpakieyjk" path="res://img/World/Tiles/platformPack_tile048.png" id="3_iajut"]
 [ext_resource type="Texture2D" uid="uid://c2rk8ljhfh361" path="res://img/World/industrial/platformIndustrial_036.png" id="4_sm8av"]
@@ -13,7 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://mcwce4dhvwe6" path="res://img/World/industrial/platformIndustrial_037.png" id="8_ec3qa"]
 [ext_resource type="Texture2D" uid="uid://d1r6nskt7tqs4" path="res://img/World/industrial/platformIndustrial_029.png" id="10_ukt2v"]
 [ext_resource type="PackedScene" uid="uid://d2axth5dhjggi" path="res://assets/coins.tscn" id="13_w2yff"]
+[ext_resource type="AudioStream" uid="uid://dwryv5o5efccx" path="res://audio/golden coin.mp3" id="14_am11p"]
+[ext_resource type="PackedScene" uid="uid://cd8vr0dtxydql" path="res://silvercoin.tscn" id="15_ukt2v"]
+[ext_resource type="PackedScene" uid="uid://dno1n3ew16yl1" path="res://assets/tv.tscn" id="17_ukt2v"]
 [ext_resource type="PackedScene" uid="uid://cssbf7mw2w2k4" path="res://hud.tscn" id="18_0knql"]
+[ext_resource type="Texture2D" uid="uid://cb7743n3pqwlg" path="res://img/World/Tiles/platformPack_tile064.png" id="18_w2yff"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_brder"]
+radius = 20.0
+height = 40.0
 
 [sub_resource type="GDScript" id="GDScript_ukt2v"]
 script/source = "extends Area2D
@@ -57,13 +65,53 @@ size = Vector2(69, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0knql"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0knql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sm8av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sm8av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sm8av")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iajut")
+}],
+"loop": true,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w2yff"]
+radius = 22.0
+height = 54.0
+
+[node name="niveau2" type="Node2D"]
 script = ExtResource("1_7f8un")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(429, -520)
-scale = Vector2(0.613646, 0.613646)
-texture = ExtResource("1_iajut")
+position = Vector2(485.264, -538.274)
+scale = Vector2(0.761534, 0.761534)
+texture = ExtResource("2_asq45")
+
+[node name="bouton" type="Area2D" parent="."]
+position = Vector2(-122, -170)
+
+[node name="bouton" type="Sprite2D" parent="bouton"]
+position = Vector2(-88, -544)
+texture = ExtResource("18_w2yff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bouton"]
+position = Vector2(-88, -524)
+shape = SubResource("CapsuleShape2D_brder")
 
 [node name="porte" type="Area2D" parent="."]
 script = SubResource("GDScript_ukt2v")
@@ -72,7 +120,7 @@ script = SubResource("GDScript_ukt2v")
 position = Vector2(-372, -62)
 shape = SubResource("CapsuleShape2D_on60i")
 
-[node name="porte2" type="AnimatedSprite2D" parent="."]
+[node name="porte" type="AnimatedSprite2D" parent="porte"]
 position = Vector2(-272, -43)
 sprite_frames = SubResource("SpriteFrames_7unoq")
 animation = &"Closed"
@@ -855,6 +903,62 @@ position = Vector2(0, 1.52588e-05)
 scale = Vector2(0.280004, 0.280004)
 texture = ExtResource("10_ukt2v")
 
+[node name="petitbloc28" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-1142, -501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc28"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc28/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc29" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-1122, -501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc29"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc29/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc30" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-1102, -501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc30"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc30/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
+[node name="petitbloc31" type="StaticBody2D" parent="Blocs"]
+position = Vector2(-1162, -501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocs/petitbloc31"]
+position = Vector2(923, -174)
+shape = SubResource("RectangleShape2D_0knql")
+one_way_collision = true
+metadata/_edit_group_ = true
+
+[node name="P_industrial" type="Sprite2D" parent="Blocs/petitbloc31/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(0.280004, 0.280004)
+texture = ExtResource("10_ukt2v")
+
 [node name="player" parent="." instance=ExtResource("6_on60i")]
 position = Vector2(-272, -36)
 scale = Vector2(0.513591, 0.513591)
@@ -877,40 +981,74 @@ stream = ExtResource("7_vehya")
 
 [node name="coins" type="Node" parent="."]
 
-[node name="coins1" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="bronze_coins" type="Node" parent="coins"]
+
+[node name="coins1" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(46, -44)
 scale = Vector2(0.2, 0.2)
 
-[node name="coins2" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="coins2" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(413, -149)
 scale = Vector2(0.2, 0.2)
 
-[node name="coins3" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="coins3" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(909, -199)
 scale = Vector2(0.2, 0.2)
 
-[node name="coins4" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="coins4" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(625, -541)
 scale = Vector2(0.2, 0.2)
 
-[node name="coins5" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="coins5" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(290, -749)
 scale = Vector2(0.2, 0.2)
 
-[node name="coins6" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="coins6" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(606, -943)
 scale = Vector2(0.2, 0.2)
 
-[node name="coins7" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="coins7" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(332, -1009)
 scale = Vector2(0.2, 0.2)
 
-[node name="coins8" parent="coins" instance=ExtResource("13_w2yff")]
+[node name="coins8" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
 position = Vector2(676, -1029)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins9" parent="coins/bronze_coins" instance=ExtResource("13_w2yff")]
+position = Vector2(-66, -857)
+scale = Vector2(0.2, 0.2)
+
+[node name="silvercoin" type="Node" parent="coins"]
+
+[node name="silvercoins" type="AudioStreamPlayer2D" parent="coins/silvercoin"]
+position = Vector2(823.201, -516.6)
+stream = ExtResource("14_am11p")
+
+[node name="silvercoin" parent="coins/silvercoin" instance=ExtResource("15_ukt2v")]
+position = Vector2(76, -957)
 scale = Vector2(0.2, 0.2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("18_0knql")]
 
-[connection signal="body_entered" from="porte" to="porte" method="_on_body_entered"]
+[node name="porte3" type="Area2D" parent="."]
+position = Vector2(1206, 124)
+
+[node name="porte" type="AnimatedSprite2D" parent="porte3"]
+position = Vector2(-367, -1208)
+sprite_frames = SubResource("SpriteFrames_0knql")
+animation = &"Closed"
+autoplay = "Closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porte3"]
+position = Vector2(-367, -1203)
+shape = SubResource("CapsuleShape2D_w2yff")
+
+[node name="tv" parent="." instance=ExtResource("17_ukt2v")]
+position = Vector2(924, -1070)
+scale = Vector2(0.52, 0.52)
+
+[connection signal="body_entered" from="bouton" to="." method="_on_bouton_body_entered"]
+[connection signal="body_entered" from="porte3" to="." method="_on_porte_3_body_entered"]
