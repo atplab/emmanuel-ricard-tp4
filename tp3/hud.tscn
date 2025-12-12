@@ -36,7 +36,8 @@ Cliquez ici pour fermer ce menu"
 [node name="coin" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_right = 157.0
+offset_left = 2.0
+offset_right = 159.0
 offset_bottom = 61.0
 text = "Coins: 0"
 

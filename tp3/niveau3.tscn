@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://xb323t2hkiia"]
+[gd_scene load_steps=27 format=3 uid="uid://xb323t2hkiia"]
 
 [ext_resource type="Script" uid="uid://bdfrcm8fm6g33" path="res://niveau_3.gd" id="1_bomor"]
 [ext_resource type="Texture2D" uid="uid://30e8vol1mnnq" path="res://img/World/Background/Backgrounds/backgroundEmpty.png" id="2_7fvoi"]
@@ -20,8 +20,17 @@
 [ext_resource type="PackedScene" uid="uid://ctgh61po84njd" path="res://assets/bulle_sol.tscn" id="18_0efp2"]
 [ext_resource type="AudioStream" uid="uid://dwryv5o5efccx" path="res://audio/golden coin.mp3" id="19_omsas"]
 [ext_resource type="PackedScene" uid="uid://cd8vr0dtxydql" path="res://silvercoin.tscn" id="20_rpi0e"]
+[ext_resource type="Texture2D" uid="uid://bl17mk5401wgd" path="res://img/World/lvl_winter/Tiles/caneRedSmall.png" id="21_pcnf0"]
+[ext_resource type="Texture2D" uid="uid://ddyhelcntnja1" path="res://img/World/lvl_winter/Tiles/caneGreenSmall.png" id="22_rb1k4"]
+[ext_resource type="Texture2D" uid="uid://c5s8p6kqjpg5p" path="res://img/World/lvl_winter/Tiles/deadTree.png" id="23_yd7pv"]
+[ext_resource type="Texture2D" uid="uid://dn44eodv2onmt" path="res://img/World/lvl_winter/Tiles/plant.png" id="24_2ww3o"]
+[ext_resource type="Texture2D" uid="uid://cax81isfnmqlv" path="res://img/World/lvl_winter/Tiles/plantAlt.png" id="25_ax0vu"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omsas"]
+radius = 22.0
+height = 54.0
+
+[node name="niveau3" type="Node2D"]
 script = ExtResource("1_bomor")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
@@ -57,6 +66,30 @@ texture = ExtResource("6_7fvoi")
 
 [node name="IglooAlt" type="Sprite2D" parent="Igloo"]
 position = Vector2(137, 423)
+texture = ExtResource("7_0efp2")
+
+[node name="IglooDoor2" type="Sprite2D" parent="Igloo"]
+position = Vector2(2158, -39)
+texture = ExtResource("2_bomor")
+
+[node name="IglooRoofLeft2" type="Sprite2D" parent="Igloo"]
+position = Vector2(2088, -109)
+texture = ExtResource("3_0cjlb")
+
+[node name="IglooRoof2" type="Sprite2D" parent="Igloo"]
+position = Vector2(2158, -109)
+texture = ExtResource("4_omrw1")
+
+[node name="IglooRoofRight2" type="Sprite2D" parent="Igloo"]
+position = Vector2(2228, -109)
+texture = ExtResource("5_cy483")
+
+[node name="Igloo3" type="Sprite2D" parent="Igloo"]
+position = Vector2(2088, -39)
+texture = ExtResource("6_7fvoi")
+
+[node name="IglooAlt2" type="Sprite2D" parent="Igloo"]
+position = Vector2(2228, -39)
 texture = ExtResource("7_0efp2")
 
 [node name="player" parent="." instance=ExtResource("8_vtk3d")]
@@ -101,6 +134,21 @@ position = Vector2(-140, -8)
 [node name="long_iceblock5" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
 position = Vector2(140, -8)
 
+[node name="long_iceblock6" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(2159, -471)
+
+[node name="long_iceblock7" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(2089, -471)
+
+[node name="long_iceblock8" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(2229, -471)
+
+[node name="long_iceblock9" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(2019, -471)
+
+[node name="long_iceblock10" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(2299, -471)
+
 [node name="iceblock" type="Node" parent="."]
 
 [node name="iceblock" parent="iceblock" instance=ExtResource("11_3fuli")]
@@ -108,6 +156,21 @@ position = Vector2(185, 224)
 
 [node name="iceblock2" parent="iceblock" instance=ExtResource("11_3fuli")]
 position = Vector2(366, 229)
+
+[node name="iceblock3" parent="iceblock" instance=ExtResource("11_3fuli")]
+position = Vector2(2212, -759)
+
+[node name="iceblock4" parent="iceblock" instance=ExtResource("11_3fuli")]
+position = Vector2(2257, -653)
+
+[node name="iceblock5" parent="iceblock" instance=ExtResource("11_3fuli")]
+position = Vector2(2256, -533)
+
+[node name="iceblock6" parent="iceblock" instance=ExtResource("11_3fuli")]
+position = Vector2(2254, -424)
+
+[node name="iceblock7" parent="iceblock" instance=ExtResource("11_3fuli")]
+position = Vector2(2255, -324)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -171,6 +234,58 @@ scale = Vector2(0.514, 0.514)
 position = Vector2(1016, -569)
 scale = Vector2(0.514, 0.514)
 
+[node name="cloud15" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1160, -511)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud16" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1295, -456)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud17" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1439, -419)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud18" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1504, -533)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud19" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1505, -584)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud20" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1504, -641)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud21" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1502, -694)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud22" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1501, -751)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud23" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1500, -810)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud24" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1499, -861)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud25" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1651, -853)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud26" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1794, -867)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud27" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1945, -832)
+scale = Vector2(0.514, 0.514)
+
 [node name="Spikes2" type="Node" parent="."]
 
 [node name="Spikes" parent="Spikes2" instance=ExtResource("15_cy483")]
@@ -189,6 +304,18 @@ scale = Vector2(0.375, 0.375)
 position = Vector2(1249, 110)
 scale = Vector2(3.4, 3.4)
 
+[node name="Spikes5" parent="Spikes2" instance=ExtResource("15_cy483")]
+position = Vector2(1577, -572)
+scale = Vector2(2.41, 2.41)
+
+[node name="Spikes6" parent="Spikes2" instance=ExtResource("15_cy483")]
+position = Vector2(1824, 138)
+scale = Vector2(3.4, 3.4)
+
+[node name="Spikes7" parent="Spikes2" instance=ExtResource("15_cy483")]
+position = Vector2(2096, -343)
+scale = Vector2(3.4, 3.4)
+
 [node name="bulle_sol4" parent="." instance=ExtResource("18_0efp2")]
 position = Vector2(1663, 659)
 scale = Vector2(42.24, 2.8)
@@ -204,7 +331,7 @@ position = Vector2(495, 385)
 scale = Vector2(0.2, 0.2)
 
 [node name="coins3" parent="bronze_coins" instance=ExtResource("9_omsas")]
-position = Vector2(379, 397)
+position = Vector2(378, 371)
 scale = Vector2(0.2, 0.2)
 
 [node name="coins4" parent="bronze_coins" instance=ExtResource("9_omsas")]
@@ -231,6 +358,42 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(957, -176)
 scale = Vector2(0.2, 0.2)
 
+[node name="coins10" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(1536, -283)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins11" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(1942, -645)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins12" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(1764, -191)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins13" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(1794, -649)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins14" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(2373, -460)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins15" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(2365, -339)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins16" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(2359, -224)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins17" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(2310, -569)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins18" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(2379, -117)
+scale = Vector2(0.2, 0.2)
+
 [node name="silvercoin" type="Node" parent="."]
 
 [node name="silvercoins" type="AudioStreamPlayer2D" parent="silvercoin"]
@@ -240,3 +403,46 @@ stream = ExtResource("19_omsas")
 [node name="silvercoin" parent="silvercoin" instance=ExtResource("20_rpi0e")]
 position = Vector2(909, -436)
 scale = Vector2(0.2, 0.2)
+
+[node name="porte3" type="Area2D" parent="."]
+position = Vector2(2524, 1167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porte3"]
+position = Vector2(-366, -1193)
+shape = SubResource("CapsuleShape2D_omsas")
+
+[node name="decos" type="Node2D" parent="."]
+
+[node name="CaneRedSmall" type="Sprite2D" parent="decos"]
+position = Vector2(204, 431)
+texture = ExtResource("21_pcnf0")
+
+[node name="CaneGreenSmall" type="Sprite2D" parent="decos"]
+position = Vector2(2323, -34)
+texture = ExtResource("22_rb1k4")
+
+[node name="DeadTree" type="Sprite2D" parent="decos"]
+position = Vector2(-71, 424)
+texture = ExtResource("23_yd7pv")
+
+[node name="Plant" type="Sprite2D" parent="decos"]
+position = Vector2(308, 442)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_2ww3o")
+
+[node name="PlantAlt" type="Sprite2D" parent="decos"]
+position = Vector2(2335, -534)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("25_ax0vu")
+
+[node name="PlantAlt2" type="Sprite2D" parent="decos"]
+position = Vector2(2379, -308)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("25_ax0vu")
+
+[node name="Plant2" type="Sprite2D" parent="decos"]
+position = Vector2(2377, -205)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_2ww3o")
+
+[connection signal="body_entered" from="porte3" to="." method="_on_porte_3_body_entered"]

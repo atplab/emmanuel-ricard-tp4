@@ -1,24 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2qblbfro86i0"]
+[gd_scene load_steps=12 format=3 uid="uid://c2qblbfro86i0"]
 
 [ext_resource type="Script" uid="uid://c7r4v22te0b4n" path="res://homescreen.gd" id="1_tq0vd"]
 [ext_resource type="Texture2D" uid="uid://dx7indmqfudrf" path="res://img/World/Background/bg_layer1.png" id="2_edeuv"]
-[ext_resource type="Texture2D" uid="uid://pdmig8tsomo" path="res://img/character/Characters/platformChar_idle.png" id="3_c2ysq"]
-[ext_resource type="Texture2D" uid="uid://b54u4ukyawtjt" path="res://img/character/Characters/platformChar_happy.png" id="4_a17e7"]
 [ext_resource type="AudioStream" uid="uid://cppv8322d8tms" path="res://audio/bass.mp3" id="5_c2ysq"]
+[ext_resource type="PackedScene" uid="uid://cgjqlkugnakod" path="res://player.tscn" id="6_gboke"]
+[ext_resource type="AudioStream" uid="uid://cg61w4po2gjer" path="res://audio/jump.mp3" id="7_4wcxg"]
+[ext_resource type="AudioStream" uid="uid://de8own8hwpdsu" path="res://audio/videogame-death-sound-43894.mp3" id="8_gvolp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v0us7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_c2ysq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_a17e7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcdx0"]
+size = Vector2(720.5, 77.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a17e7"]
+size = Vector2(55, 478)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0us7"]
+size = Vector2(50, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gboke"]
+size = Vector2(81, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wcxg"]
+size = Vector2(62, 31)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -35,54 +37,49 @@ texture = ExtResource("2_edeuv")
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 326.0
-offset_top = 200.0
-offset_right = 376.0
-offset_bottom = 231.0
+offset_left = 324.0
+offset_top = 307.0
+offset_right = 374.0
+offset_bottom = 338.0
 text = "Jouer"
 
 [node name="Controls" type="Button" parent="."]
 layout_mode = 0
-offset_left = 311.0
-offset_top = 237.0
-offset_right = 392.0
-offset_bottom = 268.0
+offset_left = 125.0
+offset_top = 305.0
+offset_right = 206.0
+offset_bottom = 336.0
 text = "contrôles"
 
 [node name="quitter" type="Button" parent="."]
 layout_mode = 0
-offset_left = 321.0
-offset_top = 277.0
-offset_right = 383.0
-offset_bottom = 308.0
+offset_left = 498.0
+offset_top = 305.0
+offset_right = 560.0
+offset_bottom = 336.0
 text = "quitter"
 
 [node name="pasquitter" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 142.0
-offset_top = 272.0
-offset_right = 521.0
-offset_bottom = 303.0
+offset_left = 336.0
+offset_top = 268.0
+offset_right = 715.0
+offset_bottom = 299.0
 text = "Non tu ne vas pas quitter tu vas jouer à mon jeu"
 
 [node name="controles" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 388.0
-offset_top = 180.0
-offset_right = 678.0
-offset_bottom = 319.0
+offset_left = 22.0
+offset_top = 161.0
+offset_right = 312.0
+offset_bottom = 300.0
 text = "Touches :
 flèche droite : avancer
 flèche gauche : reculer
 Espace : saut
 Cliquez ici pour fermer ce menu"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(352, 152)
-sprite_frames = SubResource("SpriteFrames_v0us7")
-autoplay = "default"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.1
@@ -94,8 +91,61 @@ stream = ExtResource("5_c2ysq")
 volume_db = -1.162
 autoplay = true
 
+[node name="player" parent="." instance=ExtResource("6_gboke")]
+position = Vector2(347, 432)
+metadata/_edit_group_ = true
+
+[node name="jump" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(1841.93, 613.328)
+scale = Vector2(0.501062, 0.501062)
+stream = ExtResource("7_4wcxg")
+
+[node name="mort" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-109.036, -1329.85)
+scale = Vector2(1.94707, 1.94707)
+stream = ExtResource("8_gvolp")
+
+[node name="contours" type="StaticBody2D" parent="."]
+position = Vector2(326, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="contours"]
+position = Vector2(34.25, 318.75)
+shape = SubResource("RectangleShape2D_rcdx0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="contours"]
+position = Vector2(420.5, 40)
+shape = SubResource("RectangleShape2D_a17e7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="contours"]
+position = Vector2(-353, 40)
+shape = SubResource("RectangleShape2D_a17e7")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(326, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(23, 122.5)
+shape = SubResource("RectangleShape2D_v0us7")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(326, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-160.5, 120.5)
+shape = SubResource("RectangleShape2D_gboke")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(326, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(203, 120.5)
+shape = SubResource("RectangleShape2D_4wcxg")
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="quitter" to="." method="_on_quitter_pressed"]
 [connection signal="pressed" from="pasquitter" to="." method="_on_pasquitter_pressed"]
 [connection signal="pressed" from="controles" to="." method="_on_controles_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]

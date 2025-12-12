@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ce8ywka31uakl"]
+[gd_scene load_steps=13 format=3 uid="uid://ce8ywka31uakl"]
 
 [ext_resource type="Texture2D" uid="uid://dhpjo1mgv0vnc" path="res://img/World/Background/Backgrounds/grass.png" id="1_3jrsg"]
 [ext_resource type="Script" uid="uid://b1tlwn2e0u42w" path="res://fin.gd" id="1_ghhai"]
@@ -10,11 +10,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghhai"]
 size = Vector2(376.11, 86.6097)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb2dg"]
-size = Vector2(25.5009, 7.44991)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ata6"]
 size = Vector2(20, 80.674)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4texd"]
+size = Vector2(177.213, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pkn8"]
+size = Vector2(130, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb2dg"]
+size = Vector2(12.0219, 7.44991)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhdai"]
 size = Vector2(60.1092, 11.2933)
@@ -43,7 +49,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
 [node name="player" parent="." instance=ExtResource("1_igkyy")]
-position = Vector2(345, 369)
+position = Vector2(346, 354)
 scale = Vector2(0.514, 0.514)
 
 [node name="jump" type="AudioStreamPlayer2D" parent="player"]
@@ -70,25 +76,22 @@ position = Vector2(0.0549011, 3.30487)
 texture = ExtResource("5_kykcv")
 
 [node name="coin2" type="Button" parent="."]
-offset_left = 313.0
-offset_top = 322.0
-offset_right = 383.0
-offset_bottom = 343.0
+offset_left = 328.0
+offset_top = 296.0
+offset_right = 398.0
+offset_bottom = 317.0
+scale = Vector2(0.48, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 318.0
-offset_top = 321.0
-offset_right = 475.0
-offset_bottom = 382.0
+offset_left = 329.0
+offset_top = 295.0
+offset_right = 486.0
+offset_bottom = 356.0
 text = "Coins: 0"
 
 [node name="Ground9" type="StaticBody2D" parent="."]
 position = Vector2(-581, 438)
 scale = Vector2(2.745, 2.745)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground9"]
-position = Vector2(338.434, -38.3334)
-shape = SubResource("RectangleShape2D_hb2dg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground9"]
 position = Vector2(244.809, -50.5374)
@@ -98,15 +101,40 @@ shape = SubResource("RectangleShape2D_5ata6")
 position = Vector2(440.801, -50.2732)
 shape = SubResource("RectangleShape2D_5ata6")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground9"]
-position = Vector2(336.794, -65.7559)
-shape = SubResource("RectangleShape2D_bhdai")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground9"]
+position = Vector2(343.087, -100.911)
+shape = SubResource("RectangleShape2D_4texd")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground9"]
+position = Vector2(338.798, -16.0291)
+scale = Vector2(0.364299, 0.364299)
+shape = SubResource("RectangleShape2D_0pkn8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground9"]
+position = Vector2(337.158, -47.8051)
+shape = SubResource("RectangleShape2D_hb2dg")
 
 [node name="Restart" type="Button" parent="."]
-offset_left = 261.0
-offset_top = 242.0
-offset_right = 427.0
-offset_bottom = 273.0
+offset_left = 264.0
+offset_top = 202.0
+offset_right = 430.0
+offset_bottom = 233.0
 text = "Recommencer le jeu"
 
+[node name="Felicitation" type="Button" parent="."]
+offset_left = 284.0
+offset_top = 379.0
+offset_right = 415.0
+offset_bottom = 410.0
+text = "FÉLICITATION !!!"
+
+[node name="Restart2" type="Area2D" parent="."]
+position = Vector2(629, 300)
+scale = Vector2(2.745, 2.745)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Restart2"]
+position = Vector2(-102.914, -30.0547)
+shape = SubResource("RectangleShape2D_bhdai")
+
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="body_entered" from="Restart2" to="." method="_on_restart_2_body_entered"]
