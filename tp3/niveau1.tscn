@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://b1ro10u7is8fx"]
+[gd_scene load_steps=33 format=3 uid="uid://b1ro10u7is8fx"]
 
 [ext_resource type="Script" uid="uid://ct3t1w0kcqaoi" path="res://niveau_1.gd" id="1_2db7c"]
 [ext_resource type="Texture2D" uid="uid://cn6wl1t5fdtx6" path="res://img/World/Environment/mushroom_red.png" id="1_cte38"]
 [ext_resource type="Texture2D" uid="uid://jogb3wma488a" path="res://img/World/Environment/ground_cake.png" id="1_midqc"]
+[ext_resource type="Texture2D" uid="uid://cjxlcrxsoye8t" path="res://img/World/Background/Backgrounds/foresy.png" id="2_5al67"]
 [ext_resource type="Texture2D" uid="uid://bj5088kraew2a" path="res://img/World/Environment/mushroom_brown.png" id="2_tba4h"]
 [ext_resource type="Texture2D" uid="uid://db18uge231iah" path="res://img/World/Environment/ground_cake_small.png" id="2_w8phw"]
 [ext_resource type="Texture2D" uid="uid://dqq6kgnagjs03" path="res://img/World/Environment/ground_sand.png" id="3_w8phw"]
@@ -13,13 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://ce4fc6ykv4eyw" path="res://img/World/Environment/ground_sand_small.png" id="9_w1a7u"]
 [ext_resource type="AudioStream" uid="uid://cg61w4po2gjer" path="res://audio/jump.mp3" id="10_b8t6s"]
 [ext_resource type="PackedScene" uid="uid://ebxnr7an6arh" path="res://assets/bee.tscn" id="15_285be"]
+[ext_resource type="AudioStream" uid="uid://de8own8hwpdsu" path="res://audio/videogame-death-sound-43894.mp3" id="18_ug3om"]
 [ext_resource type="PackedScene" uid="uid://cd8vr0dtxydql" path="res://silvercoin.tscn" id="21_5al67"]
 [ext_resource type="AudioStream" uid="uid://xmsricj51e2a" path="res://audio/calm coin.mp3" id="21_eyyip"]
-[ext_resource type="AudioStream" uid="uid://cc71stphbapbk" path="res://audio/mamamamown.mp3" id="23_285be"]
 [ext_resource type="PackedScene" uid="uid://d2axth5dhjggi" path="res://assets/coins.tscn" id="24_lwrnq"]
+[ext_resource type="PackedScene" uid="uid://ctgh61po84njd" path="res://assets/bulle_sol.tscn" id="25_ug3om"]
 [ext_resource type="AudioStream" uid="uid://dwryv5o5efccx" path="res://audio/golden coin.mp3" id="26_fskeg"]
 [ext_resource type="PackedScene" uid="uid://dno1n3ew16yl1" path="res://assets/tv.tscn" id="27_w1a7u"]
-[ext_resource type="Texture2D" uid="uid://decya2c4jv5xp" path="res://img/mountain_bg.jpg" id="30_xeobv"]
 [ext_resource type="Texture2D" uid="uid://dg84hgaq87w5t" path="res://img/World/Tiles/platformPack_tile052.png" id="31_v1sc6"]
 [ext_resource type="Texture2D" uid="uid://dyglcpakieyjk" path="res://img/World/Tiles/platformPack_tile048.png" id="32_285be"]
 [ext_resource type="Texture2D" uid="uid://cb7743n3pqwlg" path="res://img/World/Tiles/platformPack_tile064.png" id="33_ixoue"]
@@ -72,10 +73,13 @@ size = Vector2(59.4878, 14.6342)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2db7c")
 
-[node name="bg" type="Sprite2D" parent="."]
-position = Vector2(223.662, -297.374)
-scale = Vector2(0.517787, 0.517787)
-texture = ExtResource("30_xeobv")
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+
+[node name="bg" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(323.447, 200.553)
+scale = Vector2(0.6378, 0.6378)
+texture = ExtResource("2_5al67")
 
 [node name="bouton" type="Area2D" parent="."]
 position = Vector2(222, -583)
@@ -945,7 +949,7 @@ stream = ExtResource("10_b8t6s")
 [node name="mort" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-109.036, -1329.85)
 scale = Vector2(1.94707, 1.94707)
-stream = ExtResource("23_285be")
+stream = ExtResource("18_ug3om")
 
 [node name="coins" type="Node2D" parent="."]
 position = Vector2(474, 373)
@@ -1027,6 +1031,10 @@ position = Vector2(-2553.6, -3931.2)
 [node name="tv" parent="." instance=ExtResource("27_w1a7u")]
 position = Vector2(21, -1117)
 scale = Vector2(0.52, 0.52)
+
+[node name="bulle_sol4" parent="." instance=ExtResource("25_ug3om")]
+position = Vector2(1520, 881)
+scale = Vector2(42.24, 2.8)
 
 [connection signal="body_entered" from="bouton" to="." method="_on_bouton_body_entered"]
 [connection signal="body_entered" from="porte" to="." method="_on_porte_body_entered"]

@@ -1,0 +1,242 @@
+[gd_scene load_steps=21 format=3 uid="uid://xb323t2hkiia"]
+
+[ext_resource type="Script" uid="uid://bdfrcm8fm6g33" path="res://niveau_3.gd" id="1_bomor"]
+[ext_resource type="Texture2D" uid="uid://30e8vol1mnnq" path="res://img/World/Background/Backgrounds/backgroundEmpty.png" id="2_7fvoi"]
+[ext_resource type="Texture2D" uid="uid://b7ol1dnl35pxu" path="res://img/World/lvl_winter/Tiles/iglooDoor.png" id="2_bomor"]
+[ext_resource type="Texture2D" uid="uid://egqva4a3vn8a" path="res://img/World/lvl_winter/Tiles/iglooRoofLeft.png" id="3_0cjlb"]
+[ext_resource type="Texture2D" uid="uid://77hcdh8g81ov" path="res://img/World/lvl_winter/Tiles/iglooRoof.png" id="4_omrw1"]
+[ext_resource type="Texture2D" uid="uid://cfgulfm0hp6nc" path="res://img/World/lvl_winter/Tiles/iglooRoofRight.png" id="5_cy483"]
+[ext_resource type="Texture2D" uid="uid://bbheqe815s8oe" path="res://img/World/lvl_winter/Tiles/igloo.png" id="6_7fvoi"]
+[ext_resource type="Texture2D" uid="uid://thkmckxkyxw7" path="res://img/World/lvl_winter/Tiles/iglooAlt.png" id="7_0efp2"]
+[ext_resource type="PackedScene" uid="uid://cgjqlkugnakod" path="res://player.tscn" id="8_vtk3d"]
+[ext_resource type="PackedScene" uid="uid://d2axth5dhjggi" path="res://assets/coins.tscn" id="9_omsas"]
+[ext_resource type="AudioStream" uid="uid://cg61w4po2gjer" path="res://audio/jump.mp3" id="10_cy483"]
+[ext_resource type="PackedScene" uid="uid://u6hpb8f57vhh" path="res://long_iceblock.tscn" id="10_rpi0e"]
+[ext_resource type="PackedScene" uid="uid://d0ctoeuqfpw7y" path="res://iceblock.tscn" id="11_3fuli"]
+[ext_resource type="AudioStream" uid="uid://de8own8hwpdsu" path="res://audio/videogame-death-sound-43894.mp3" id="11_omsas"]
+[ext_resource type="PackedScene" uid="uid://cssbf7mw2w2k4" path="res://hud.tscn" id="12_y5xmi"]
+[ext_resource type="PackedScene" uid="uid://b8r5k1neiyjyu" path="res://spikes.tscn" id="15_cy483"]
+[ext_resource type="PackedScene" uid="uid://dos7qmrm71dmy" path="res://cloud.tscn" id="17_7fvoi"]
+[ext_resource type="PackedScene" uid="uid://ctgh61po84njd" path="res://assets/bulle_sol.tscn" id="18_0efp2"]
+[ext_resource type="AudioStream" uid="uid://dwryv5o5efccx" path="res://audio/golden coin.mp3" id="19_omsas"]
+[ext_resource type="PackedScene" uid="uid://cd8vr0dtxydql" path="res://silvercoin.tscn" id="20_rpi0e"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bomor")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+
+[node name="bg" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(323.447, 200.553)
+scale = Vector2(0.6378, 0.6378)
+texture = ExtResource("2_7fvoi")
+
+[node name="Igloo" type="Node2D" parent="."]
+position = Vector2(0, 7)
+
+[node name="IglooDoor" type="Sprite2D" parent="Igloo"]
+position = Vector2(67, 423)
+texture = ExtResource("2_bomor")
+
+[node name="IglooRoofLeft" type="Sprite2D" parent="Igloo"]
+position = Vector2(-3, 353)
+texture = ExtResource("3_0cjlb")
+
+[node name="IglooRoof" type="Sprite2D" parent="Igloo"]
+position = Vector2(67, 353)
+texture = ExtResource("4_omrw1")
+
+[node name="IglooRoofRight" type="Sprite2D" parent="Igloo"]
+position = Vector2(137, 353)
+texture = ExtResource("5_cy483")
+
+[node name="Igloo2" type="Sprite2D" parent="Igloo"]
+position = Vector2(-3, 423)
+texture = ExtResource("6_7fvoi")
+
+[node name="IglooAlt" type="Sprite2D" parent="Igloo"]
+position = Vector2(137, 423)
+texture = ExtResource("7_0efp2")
+
+[node name="player" parent="." instance=ExtResource("8_vtk3d")]
+position = Vector2(66, 433)
+scale = Vector2(0.514, 0.514)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(1, 0)
+scale = Vector2(0.997946, 1.04359)
+zoom = Vector2(1.5, 1.5)
+limit_left = -500
+limit_right = 3000
+limit_bottom = 720
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="jump" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(1841.93, 613.328)
+scale = Vector2(0.501062, 0.501062)
+stream = ExtResource("10_cy483")
+
+[node name="mort" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-109.036, -1329.85)
+scale = Vector2(1.94707, 1.94707)
+stream = ExtResource("11_omsas")
+
+[node name="long_iceblock" type="Node" parent="."]
+
+[node name="long_iceblock" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(0, -8)
+
+[node name="long_iceblock2" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(-70, -8)
+
+[node name="long_iceblock3" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(70, -8)
+
+[node name="long_iceblock4" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(-140, -8)
+
+[node name="long_iceblock5" parent="long_iceblock" instance=ExtResource("10_rpi0e")]
+position = Vector2(140, -8)
+
+[node name="iceblock" type="Node" parent="."]
+
+[node name="iceblock" parent="iceblock" instance=ExtResource("11_3fuli")]
+position = Vector2(185, 224)
+
+[node name="iceblock2" parent="iceblock" instance=ExtResource("11_3fuli")]
+position = Vector2(366, 229)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("12_y5xmi")]
+
+[node name="clouds" type="Node" parent="."]
+
+[node name="cloud" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(181, 202)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud2" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(256, 142)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud3" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(379, 78)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud4" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(560, 84)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud5" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(664, -7)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud6" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(664, -94)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud7" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(664, -179)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud8" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(665, -270)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud9" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(662, -367)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud10" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(605, -454)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud11" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(795, -412)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud12" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(858, -570)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud13" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(665, -568)
+scale = Vector2(0.514, 0.514)
+
+[node name="cloud14" parent="clouds" instance=ExtResource("17_7fvoi")]
+position = Vector2(1016, -569)
+scale = Vector2(0.514, 0.514)
+
+[node name="Spikes2" type="Node" parent="."]
+
+[node name="Spikes" parent="Spikes2" instance=ExtResource("15_cy483")]
+position = Vector2(756, 272)
+scale = Vector2(0.375, 0.375)
+
+[node name="Spikes2" parent="Spikes2" instance=ExtResource("15_cy483")]
+position = Vector2(962, -293)
+scale = Vector2(0.215, 0.215)
+
+[node name="Spikes3" parent="Spikes2" instance=ExtResource("15_cy483")]
+position = Vector2(1057, -342)
+scale = Vector2(0.375, 0.375)
+
+[node name="Spikes4" parent="Spikes2" instance=ExtResource("15_cy483")]
+position = Vector2(1249, 110)
+scale = Vector2(3.4, 3.4)
+
+[node name="bulle_sol4" parent="." instance=ExtResource("18_0efp2")]
+position = Vector2(1663, 659)
+scale = Vector2(42.24, 2.8)
+
+[node name="bronze_coins" type="Node" parent="."]
+
+[node name="coins1" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(191, 438)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins2" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(495, 385)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins3" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(379, 397)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins4" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(800, 232)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins5" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(960, 194)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins6" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(960, 104)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins7" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(959, 19)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins8" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(958, -73)
+scale = Vector2(0.2, 0.2)
+
+[node name="coins9" parent="bronze_coins" instance=ExtResource("9_omsas")]
+position = Vector2(957, -176)
+scale = Vector2(0.2, 0.2)
+
+[node name="silvercoin" type="Node" parent="."]
+
+[node name="silvercoins" type="AudioStreamPlayer2D" parent="silvercoin"]
+position = Vector2(823.201, -516.6)
+stream = ExtResource("19_omsas")
+
+[node name="silvercoin" parent="silvercoin" instance=ExtResource("20_rpi0e")]
+position = Vector2(909, -436)
+scale = Vector2(0.2, 0.2)

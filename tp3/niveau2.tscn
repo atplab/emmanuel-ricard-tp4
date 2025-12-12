@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://mfm4us8ni1gg"]
 
 [ext_resource type="Script" uid="uid://dj7cpwtl53of7" path="res://niveau_2.gd" id="1_7f8un"]
-[ext_resource type="Texture2D" uid="uid://drekys2aug4jb" path="res://img/World/desert.jpg" id="2_asq45"]
 [ext_resource type="Texture2D" uid="uid://dg84hgaq87w5t" path="res://img/World/Tiles/platformPack_tile052.png" id="2_sm8av"]
+[ext_resource type="Texture2D" uid="uid://cn5mdy6jw1xxr" path="res://img/World/Background/Backgrounds/desert.png" id="2_w2yff"]
 [ext_resource type="Texture2D" uid="uid://dyglcpakieyjk" path="res://img/World/Tiles/platformPack_tile048.png" id="3_iajut"]
 [ext_resource type="Texture2D" uid="uid://c2rk8ljhfh361" path="res://img/World/industrial/platformIndustrial_036.png" id="4_sm8av"]
 [ext_resource type="PackedScene" uid="uid://ctgh61po84njd" path="res://assets/bulle_sol.tscn" id="5_7f8un"]
@@ -97,10 +97,13 @@ height = 54.0
 [node name="niveau2" type="Node2D"]
 script = ExtResource("1_7f8un")
 
-[node name="bg" type="Sprite2D" parent="."]
-position = Vector2(485.264, -538.274)
-scale = Vector2(0.761534, 0.761534)
-texture = ExtResource("2_asq45")
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+
+[node name="bg" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(323.447, 200.553)
+scale = Vector2(0.6378, 0.6378)
+texture = ExtResource("2_w2yff")
 
 [node name="bouton" type="Area2D" parent="."]
 position = Vector2(-122, -170)
@@ -1039,7 +1042,7 @@ position = Vector2(1206, 124)
 [node name="porte" type="AnimatedSprite2D" parent="porte3"]
 position = Vector2(-367, -1208)
 sprite_frames = SubResource("SpriteFrames_0knql")
-animation = &"Closed"
+animation = &"Open"
 autoplay = "Closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="porte3"]

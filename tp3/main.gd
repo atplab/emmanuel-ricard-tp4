@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 @export var monnaies = 0
 var monnaies_fin_niveau1 = 0
+var monnaies_fin_niveau2 = 0
 
 signal monnaie_collectee
 

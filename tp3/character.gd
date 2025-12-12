@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	if etat_courant == Etat.MARCHE:
 		$joueur.play("walk")
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$jump.play()
 

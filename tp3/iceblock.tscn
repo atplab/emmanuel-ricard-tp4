@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ctoeuqfpw7y"]
+
+[ext_resource type="Texture2D" uid="uid://c8v628yadhynd" path="res://img/World/lvl_winter/Tiles/iceBlock.png" id="1_ao45g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60wiv"]
+size = Vector2(70.4938, 70.4938)
+
+[node name="iceblock" type="StaticBody2D"]
+scale = Vector2(0.514, 0.514)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(239.393, 475.393)
+scale = Vector2(0.578571, 0.578571)
+shape = SubResource("RectangleShape2D_60wiv")
+
+[node name="IceBlock" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_ao45g")

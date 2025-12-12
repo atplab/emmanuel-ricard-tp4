@@ -4,14 +4,22 @@
 [ext_resource type="AudioStream" uid="uid://w1jrdk5rt0u5" path="res://audio/background music.mp3" id="2_64ctp"]
 
 [node name="HUD" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_37p78")
 
 [node name="Menu" type="Button" parent="."]
-offset_left = 657.0
+offset_left = 661.0
 offset_top = 1.0
-offset_right = 719.0
+offset_right = 723.0
 offset_bottom = 32.0
 text = "Menu"
+
+[node name="coin2" type="Button" parent="."]
+offset_left = -5.0
+offset_top = 1.0
+offset_right = 22.0
+offset_bottom = 22.0
+button_mask = 0
 
 [node name="controles" type="Button" parent="."]
 visible = false
@@ -36,5 +44,15 @@ text = "Coins: 0"
 stream = ExtResource("2_64ctp")
 autoplay = true
 
+[node name="Restart" type="Button" parent="."]
+visible = false
+offset_left = 279.0
+offset_top = 325.0
+offset_right = 445.0
+offset_bottom = 356.0
+text = "Recommencer le jeu"
+
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="coin2" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

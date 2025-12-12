@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8r5k1neiyjyu"]
+
+[ext_resource type="Script" uid="uid://mftj1tlixg2o" path="res://spikes.gd" id="1_8fhau"]
+[ext_resource type="Texture2D" uid="uid://dkeqfh8r6diw" path="res://img/character/Enemies/spikeBall1.png" id="2_ds4fp"]
+[ext_resource type="Texture2D" uid="uid://dvq2nxs4gq70m" path="res://img/character/Enemies/spikeBall_2.png" id="3_k4mtd"]
+[ext_resource type="AudioStream" uid="uid://cc71stphbapbk" path="res://audio/mamamamown.mp3" id="4_ds4fp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_688ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ds4fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k4mtd")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i801f"]
+radius = 70.0071
+
+[node name="Spikes" type="Area2D"]
+script = ExtResource("1_8fhau")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+sprite_frames = SubResource("SpriteFrames_688ft")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.714904
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i801f")
+
+[node name="mort" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1453.04, -2928.98)
+scale = Vector2(5.72668, 5.72668)
+stream = ExtResource("4_ds4fp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
