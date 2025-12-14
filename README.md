@@ -1,44 +1,28 @@
-# emmanuel-ricard-tp3
+# emmanuel-ricard-tp4
+
+1. Projet individuel
+2. Je vais continuer à paufiner, raffiner et continuer le développement de mes projets antérieurs
+3. Refaire l'arborescence, panneau expliquant bouton ou rendre plus facile à comprendre, menu bouton recommencer niveau, fin de jeu véritable.
 
 
-États, niveaux et progression : 
-   <br />
-Quels sont les niveaux de cette version de ton jeu (au moins 3) ? 
-   <br />
-un niveau de plateforme de gâteau qui sert d'introduction aux méchaniques de base, un autre dans le désert qui sert à en montrer une nouvelle, et un nouveau niveau mini-jeu qui est un petit
-vaisseau qui part de la gauche et qui va vers la droite
-   <br />
-      <br />
-Comment la difficulté va changer entre ces niveaux ?
-   <br />
-Le premier sera assez facile pour introduire, le deuxième un peu plus dûr avec des ennemies, et le troisième plus dûr avec moins de temps de réflection
-   <br />
-      <br />
-Quels nouveaux objets ou paramètres seront changés ?
-   <br />
-le gameplay, passant de plateforme à vaisseau shooting, et les interactions dans les niveaux
-   <br />
-   <br />
-      <br />
-Programmation d’un système de clé et de porte : 
-   <br />
-une clée trouvable pour débloquer le niveau 3
-   <br />
-Quelles conditions doivent être complétées pour progresser entre les niveaux ? 
-   <br />
-le premier il faut juste monter, et le deuxième il faut trouver la clée
-   <br />
-   <br />
-      <br />
-Intégration d’une interface graphique HUD («Head-Up Display») : 
-   <br />
-compteur de sous pour pouvoir plus tard acheter des bonus si j'ai le temps
-   <br />
-      <br />
-Quels éléments sont importantes à afficher ? À quels moments chaque information doit être affichée (permanentes ou temporaires) ?
-   <br />
-permanent : nombre de sous collectés
-   <br />
-Quelles informations le joueur a besoin pour attendre ses objectifs ?
-   <br />
-savoir qu'il doit avancer de niveau en niveau. J'ai pas encore trouvé de plus précis.
+
+
+Sources :
+- Game Over Arcade : https://pixabay.com/fr/sound-effects/game-over-arcade-6435/
+- Victory : https://pixabay.com/fr/sound-effects/victory-96688/
+- Videogame death sound  : https://pixabay.com/fr/sound-effects/videogame-death-sound-43894/
+- New Platformer Pack : https://kenney.nl/assets/new-platformer-pack
+- Background Elements Redux : https://kenney.nl/assets/background-elements-redux
+- Jumper pack : https://kenney.nl/assets/jumper-pack
+- Platformer art winter : https://kenney.nl/assets/platformer-art-winter
+- Roguelike indoors : https://kenney.nl/assets/roguelike-indoors
+- Simple race : https://kenney.nl/assets/simple-space
+- Interface sounds : https://kenney.nl/assets/interface-sounds
+- Impact sounds : https://kenney.nl/assets/impact-sounds
+- Simplified platformer pack : https://kenney.nl/assets/simplified-platformer-pack
+- upbeat background loop casual : https://pixabay.com/fr/music/airs-pour-enfants-heureux-upbeat-background-loop-casual-video-game-music-249200/
+- cartoon jump : https://pixabay.com/fr/sound-effects/cartoon-jump-6462/
+- titre principal puzzle game : https://pixabay.com/fr/music/titre-principal-puzzle-game-loop-bright-casual-video-game-music-249201/
+- grandpa dying on the floor : https://pixabay.com/fr/sound-effects/grandpa-dying-on-floor-272435/
+- bone break : https://pixabay.com/fr/sound-effects/bone-break-sound-ver-3-269662/
+- titre principal friendly town : https://pixabay.com/fr/music/titre-principal-friendly-town-fun-video-game-music-loop-256055/
