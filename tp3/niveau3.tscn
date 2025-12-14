@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://xb323t2hkiia"]
+[gd_scene load_steps=28 format=3 uid="uid://xb323t2hkiia"]
 
 [ext_resource type="Script" uid="uid://bdfrcm8fm6g33" path="res://niveau_3.gd" id="1_bomor"]
 [ext_resource type="Texture2D" uid="uid://30e8vol1mnnq" path="res://img/World/Background/Backgrounds/backgroundEmpty.png" id="2_7fvoi"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://c5s8p6kqjpg5p" path="res://img/World/lvl_winter/Tiles/deadTree.png" id="23_yd7pv"]
 [ext_resource type="Texture2D" uid="uid://dn44eodv2onmt" path="res://img/World/lvl_winter/Tiles/plant.png" id="24_2ww3o"]
 [ext_resource type="Texture2D" uid="uid://cax81isfnmqlv" path="res://img/World/lvl_winter/Tiles/plantAlt.png" id="25_ax0vu"]
+[ext_resource type="AudioStream" uid="uid://3vyqgofjg4a7" path="res://audio/happy-energie-337516.mp3" id="26_rb1k4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omsas"]
 radius = 22.0
@@ -107,10 +108,9 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
-[node name="jump" type="AudioStreamPlayer2D" parent="player"]
-position = Vector2(1841.93, 613.328)
-scale = Vector2(0.501062, 0.501062)
+[node name="jump" type="AudioStreamPlayer" parent="player"]
 stream = ExtResource("10_cy483")
+volume_db = -7.949
 
 [node name="mort" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-109.036, -1329.85)
@@ -444,5 +444,10 @@ texture = ExtResource("25_ax0vu")
 position = Vector2(2377, -205)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("24_2ww3o")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_rb1k4")
+volume_db = -7.949
+autoplay = true
 
 [connection signal="body_entered" from="porte3" to="." method="_on_porte_3_body_entered"]

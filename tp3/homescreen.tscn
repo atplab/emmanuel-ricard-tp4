@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7r4v22te0b4n" path="res://homescreen.gd" id="1_tq0vd"]
 [ext_resource type="Texture2D" uid="uid://dx7indmqfudrf" path="res://img/World/Background/bg_layer1.png" id="2_edeuv"]
-[ext_resource type="AudioStream" uid="uid://cppv8322d8tms" path="res://audio/bass.mp3" id="5_c2ysq"]
+[ext_resource type="AudioStream" uid="uid://cqjbhup8fd1kq" path="res://audio/puzzle-game-loop-bright-casual-video-game-music-249201.mp3" id="3_a17e7"]
 [ext_resource type="PackedScene" uid="uid://cgjqlkugnakod" path="res://player.tscn" id="6_gboke"]
 [ext_resource type="AudioStream" uid="uid://cg61w4po2gjer" path="res://audio/jump.mp3" id="7_4wcxg"]
 [ext_resource type="AudioStream" uid="uid://de8own8hwpdsu" path="res://audio/videogame-death-sound-43894.mp3" id="8_gvolp"]
@@ -86,19 +86,18 @@ energy = 0.1
 blend_mode = 1
 shadow_color = Color(0.707964, 0.681737, 0.461887, 0)
 
-[node name="background music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_c2ysq")
-volume_db = -1.162
+[node name="background music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_a17e7")
+volume_db = -9.111
 autoplay = true
 
 [node name="player" parent="." instance=ExtResource("6_gboke")]
 position = Vector2(347, 432)
 metadata/_edit_group_ = true
 
-[node name="jump" type="AudioStreamPlayer2D" parent="player"]
-position = Vector2(1841.93, 613.328)
-scale = Vector2(0.501062, 0.501062)
+[node name="jump" type="AudioStreamPlayer" parent="player"]
 stream = ExtResource("7_4wcxg")
+volume_db = -7.949
 
 [node name="mort" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-109.036, -1329.85)

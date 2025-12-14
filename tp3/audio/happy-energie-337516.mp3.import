@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/happy-energie-337516.mp3-f497fdb12270d3506747
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://mfm4us8ni1gg"]
+[gd_scene load_steps=28 format=3 uid="uid://mfm4us8ni1gg"]
 
 [ext_resource type="Script" uid="uid://dj7cpwtl53of7" path="res://niveau_2.gd" id="1_7f8un"]
 [ext_resource type="Texture2D" uid="uid://dg84hgaq87w5t" path="res://img/World/Tiles/platformPack_tile052.png" id="2_sm8av"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dno1n3ew16yl1" path="res://assets/tv.tscn" id="17_ukt2v"]
 [ext_resource type="PackedScene" uid="uid://cssbf7mw2w2k4" path="res://hud.tscn" id="18_0knql"]
 [ext_resource type="Texture2D" uid="uid://cb7743n3pqwlg" path="res://img/World/Tiles/platformPack_tile064.png" id="18_w2yff"]
+[ext_resource type="AudioStream" uid="uid://cppv8322d8tms" path="res://audio/bass.mp3" id="19_w2yff"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_brder"]
 radius = 20.0
@@ -977,10 +978,9 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
-[node name="jump" type="AudioStreamPlayer2D" parent="player"]
-position = Vector2(1841.93, 613.328)
-scale = Vector2(0.501062, 0.501062)
+[node name="jump" type="AudioStreamPlayer" parent="player"]
 stream = ExtResource("7_vehya")
+volume_db = -7.949
 
 [node name="coins" type="Node" parent="."]
 
@@ -1052,6 +1052,11 @@ shape = SubResource("CapsuleShape2D_w2yff")
 [node name="tv" parent="." instance=ExtResource("17_ukt2v")]
 position = Vector2(924, -1070)
 scale = Vector2(0.52, 0.52)
+
+[node name="Backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_w2yff")
+volume_db = -7.949
+autoplay = true
 
 [connection signal="body_entered" from="bouton" to="." method="_on_bouton_body_entered"]
 [connection signal="body_entered" from="porte3" to="." method="_on_porte_3_body_entered"]

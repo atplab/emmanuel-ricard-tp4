@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cssbf7mw2w2k4"]
+[gd_scene load_steps=2 format=3 uid="uid://cssbf7mw2w2k4"]
 
 [ext_resource type="Script" uid="uid://cd4m0axn4tkus" path="res://hud.gd" id="1_37p78"]
-[ext_resource type="AudioStream" uid="uid://w1jrdk5rt0u5" path="res://audio/background music.mp3" id="2_64ctp"]
 
 [node name="HUD" type="Node2D"]
 process_mode = 3
@@ -40,10 +39,6 @@ offset_left = 2.0
 offset_right = 159.0
 offset_bottom = 61.0
 text = "Coins: 0"
-
-[node name="background music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_64ctp")
-autoplay = true
 
 [node name="Restart" type="Button" parent="."]
 visible = false

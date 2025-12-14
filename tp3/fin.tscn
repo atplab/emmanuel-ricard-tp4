@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ce8ywka31uakl"]
+[gd_scene load_steps=16 format=3 uid="uid://ce8ywka31uakl"]
 
 [ext_resource type="Texture2D" uid="uid://dhpjo1mgv0vnc" path="res://img/World/Background/Backgrounds/grass.png" id="1_3jrsg"]
 [ext_resource type="Script" uid="uid://b1tlwn2e0u42w" path="res://fin.gd" id="1_ghhai"]
@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://cg61w4po2gjer" path="res://audio/jump.mp3" id="2_3jrsg"]
 [ext_resource type="AudioStream" uid="uid://cc71stphbapbk" path="res://audio/mamamamown.mp3" id="3_kykcv"]
 [ext_resource type="Texture2D" uid="uid://dma1kdtodhvfo" path="res://img/World/Environment/ground_grass.png" id="5_kykcv"]
+[ext_resource type="AudioStream" uid="uid://c188xk3sxf45m" path="res://audio/victory-96688.mp3" id="7_5ata6"]
+[ext_resource type="PackedScene" uid="uid://b8r5k1neiyjyu" path="res://spikes.tscn" id="9_od4ik"]
+[ext_resource type="PackedScene" uid="uid://ebxnr7an6arh" path="res://assets/bee.tscn" id="11_23v5l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghhai"]
 size = Vector2(376.11, 86.6097)
@@ -52,10 +55,9 @@ position_smoothing_speed = 4.0
 position = Vector2(346, 354)
 scale = Vector2(0.514, 0.514)
 
-[node name="jump" type="AudioStreamPlayer2D" parent="player"]
-position = Vector2(1841.93, 613.328)
-scale = Vector2(0.501062, 0.501062)
+[node name="jump" type="AudioStreamPlayer" parent="player"]
 stream = ExtResource("2_3jrsg")
+volume_db = -7.494
 
 [node name="mort" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-109.036, -1329.85)
@@ -135,6 +137,23 @@ scale = Vector2(2.745, 2.745)
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Restart2"]
 position = Vector2(-102.914, -30.0547)
 shape = SubResource("RectangleShape2D_bhdai")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5ata6")
+volume_db = -13.248
+autoplay = true
+
+[node name="Spikes" parent="." instance=ExtResource("9_od4ik")]
+position = Vector2(117, 184)
+
+[node name="Spikes2" parent="." instance=ExtResource("9_od4ik")]
+position = Vector2(609, 173)
+
+[node name="bee1" parent="." instance=ExtResource("11_23v5l")]
+position = Vector2(517, 350)
+
+[node name="bee2" parent="." instance=ExtResource("11_23v5l")]
+position = Vector2(182, 350)
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
 [connection signal="body_entered" from="Restart2" to="." method="_on_restart_2_body_entered"]
