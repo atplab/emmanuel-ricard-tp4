@@ -140,6 +140,19 @@ position = Vector2(326, 200)
 position = Vector2(203, 120.5)
 shape = SubResource("RectangleShape2D_4wcxg")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 42.0
+offset_right = 272.0
+offset_bottom = 91.0
+scale = Vector2(4.16, 4.16)
+theme_override_colors/default_color = Color(0.990013, 1, 0.77719, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "This is why
+we jump!"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="quitter" to="." method="_on_quitter_pressed"]
